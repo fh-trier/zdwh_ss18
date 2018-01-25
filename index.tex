@@ -80,24 +80,26 @@
 % Beschreibung:     Werden Tabellen mit diesem Paket erstellt, ist es möglich Zeilenumbrüche in einer Zelle zu erzeugen
 \usepackage{tabularx}
 
+\usepackage{enumitem}
+
 % Paket:            biblatex
 \usepackage[
-    style=authoryear-icomp,    % Zitierstil
-    isbn=false,                % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
-    pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
-    maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
-    maxcitenames=3,            % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
-    autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
-    block=space,               % kleiner horizontaler Platz zwischen den Feldern
-    backref=true,              % Seiten anzeigen, auf denen die Referenz vorkommt
-    backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
-    date=short,                % Datumsformat
-    backend=biber
+style=authoryear-icomp,    % Zitierstil
+isbn=false,                % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
+pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
+maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
+maxcitenames=3,            % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
+autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
+block=space,               % kleiner horizontaler Platz zwischen den Feldern
+backref=true,              % Seiten anzeigen, auf denen die Referenz vorkommt
+backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
+date=short,                % Datumsformat
+backend=biber
 ]{biblatex}
 \setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
 \setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
 
-\addbibresource{bibliothek.bib}
+\addbibresource{literatur//bibliothek.bib}
 
 
 % Packet:           glossaries
@@ -109,53 +111,57 @@
 
 % Start des Dokuments
 \begin{document}
-     
-    % Importiere weitere .tex Dokumente
+	
+	% Importiere weitere .tex Dokumente
 	\include{titel//titel}
-    \pagebreak
-    
-    % Pagestyle
-    % Setze das Seitenlayout auf leer um Fuß und Kopfzeilen zu unterdrücken
-    \pagestyle{empty}
-    
-    % Importiere weitere .tex Dokumente
-    \include{verfasser//verfasser}
-    \include{agenda//agenda}
-    
-    % Pagestyle
-    % Setze das Seitenlayout auf fancyhdr um Fuß- und Kopfzeilen zu setzen
-    \pagestyle{fancy}
-    
-    % Löscht alle Kopf- und Fußzeilen des pagestyles fancyhdr
-    \fancyhf{}
-    
-    % Fuß- und Kopfzeile des Paketes fancyhdr
-    % [L] - Linkeseite      [O] - Ungerade Seitenzahlen         [LE,LO] - Linkeseite, Gerade- und Ungerade Seitenanzahlen
-    % [C] - Mitte           [E] - Gerade Seitenanzahlen         [CE]    - Seitenmitte, nur gerade Seitenanzahlen
-    % [R] - Rechteseite                                         [RO]    - Rechteseite, nur ungerade Seitenanzahlen
-    % \fancyhead    Kopfzeile
-    % \fancyfoot    Fußzeile
-    \fancyhead[L]{\rightmark}
-    \fancyhead[R]{Seite \thepage}
-    
-    % Pixelstärke der Kopfzeilenlinie
-    \renewcommand{\headrulewidth}{1pt}
-    
-    % Setze die Seitenbeginn zurück
-    \setcounter{page}{1}
-    
-    % Importiere weitere .tex Dokumente
-    %\include{microservices}
-    
-    % Glossar
-    \printglossaries
-    \newpage
-    
-    % Abbildungsverzeichnis
-    \listoffigures
-    \newpage
-    
-    % Literaturverzeichnis
-    \printbibliography
-   
+	\pagebreak
+	
+	% Pagestyle
+	% Setze das Seitenlayout auf leer um Fuß und Kopfzeilen zu unterdrücken
+	\pagestyle{empty}
+	
+	% Importiere weitere .tex Dokumente
+	%\include{vorwort//vorwort}
+	\include{agenda//agenda}
+	
+	% Pagestyle
+	% Setze das Seitenlayout auf fancyhdr um Fuß- und Kopfzeilen zu setzen
+	\pagestyle{fancy}
+	
+	% Löscht alle Kopf- und Fußzeilen des pagestyles fancyhdr
+	\fancyhf{}
+	
+	% Fuß- und Kopfzeile des Paketes fancyhdr
+	% [L] - Linkeseite      [O] - Ungerade Seitenzahlen         [LE,LO] - Linkeseite, Gerade- und Ungerade Seitenanzahlen
+	% [C] - Mitte           [E] - Gerade Seitenanzahlen         [CE]    - Seitenmitte, nur gerade Seitenanzahlen
+	% [R] - Rechteseite                                         [RO]    - Rechteseite, nur ungerade Seitenanzahlen
+	% \fancyhead    Kopfzeile
+	% \fancyfoot    Fußzeile
+	\fancyhead[L]{\rightmark}
+	\fancyhead[R]{Seite \thepage}
+	
+	% Pixelstärke der Kopfzeilenlinie
+	\renewcommand{\headrulewidth}{1pt}
+	
+	% Setze die Seitenbeginn zurück
+	\setcounter{page}{1}
+	
+	% Importiere weitere .tex Dokumente
+	\include{kapitel//kapitel_01}
+	
+	% Glossar
+	\printglossaries
+	\newpage
+	
+	% Abbildungsverzeichnis
+	\listoffigures
+	\newpage
+	
+	% Literaturverzeichnis
+	\printbibliography
+	
+	% Erklärung
+	%\include{erklaerung//erklaerung}
+	
 \end{document}
+
