@@ -71,9 +71,9 @@
 % Beschreibung:     Importiert hyperref um Querverweise mittels \hyperref zu erzeugen.
 \usepackage[]{hyperref}
 \hypersetup{
-	pdftitle={Reliable and scalable messaging in Microservices},
-	pdfauthor={Markus Pesch},
-	pdfsubject={Bachelorthesis}
+  pdftitle={PDF-Title},
+  pdfauthor={Markus Pesch},
+  pdfsubject={PDF-Subject}
 }
 
 % Packet:           Minted
@@ -89,17 +89,17 @@
 
 % Paket:            biblatex
 \usepackage[
-style=authoryear-icomp,    % Zitierstil
-isbn=false,                % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
-pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
-maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
-maxcitenames=3,            % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
-autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
-block=space,               % kleiner horizontaler Platz zwischen den Feldern
-backref=true,              % Seiten anzeigen, auf denen die Referenz vorkommt
-backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
-date=short,                % Datumsformat
-backend=biber
+  style=authoryear-icomp,  % Zitierstil
+  isbn=false,              % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
+  pagetracker=true,        % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
+  maxbibnames=50,          % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
+  maxcitenames=3,          % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
+  autocite=inline,         % regelt Aussehen für \autocite (inline=\parancite)
+  block=space,             % kleiner horizontaler Platz zwischen den Feldern
+  backref=true,            % Seiten anzeigen, auf denen die Referenz vorkommt
+  backrefstyle=three+,     % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
+  date=short,              % Datumsformat
+  backend=biber
 ]{biblatex}
 \setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
 \setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
