@@ -33,18 +33,18 @@
 % Option:           round - ?
 %\usepackage[round]{natbib}
 
-% Paket:            fancyhdr 
+% Paket:            fancyhdr
 % Beschreibung:     Ermöglich ein generelles Seitenlayout ein zu stellen mit Kopf und Fußzeile.
 \usepackage{fancyhdr}
 
 % Paket:            graphicx
 % Beschreibung:     Einbinden von Bildern
-% Option:           
+% Option:
 \usepackage{graphicx}
 
 % Paket:            enumitem
 % Beschreibung:     Zeilenabstände bei Aufzählungen definieren
-% Option:  
+% Option:
 \usepackage{enumitem}
 
 % Paket:            float
@@ -58,13 +58,13 @@
 % Option:           appendix - Überführt die Überschriften des Anhangs richtig ins das Inhaltsverzeichnis
 \usepackage[titletoc]{appendix}
 
-% Paket:			setspace
-% Beschreibung:		Setz über die optionen den Zeilenabstand
-% Optionen:			Möglicher Zeilenabstand
-%					singlespacing = 1,0
-%					onehalfspacing = 1,5
-%					doublespacing = 2,0
-% Restriktion:      Muss von Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.   
+% Paket:            setspace
+% Beschreibung:     Setz über die optionen den Zeilenabstand
+% Optionen:         Möglicher Zeilenabstand
+%                   singlespacing = 1,0
+%                   onehalfspacing = 1,5
+%                   doublespacing = 2,0
+% Restriktion:      Muss von Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
 \usepackage[onehalfspacing]{setspace}
 
 % Packet:           Hyperref
@@ -77,7 +77,7 @@
 }
 
 % Packet:           Minted
-% Beschreibung:     Dient zum highlining von Quellcode wie beispielsweise Java, Bash oder Python. 
+% Beschreibung:     Dient zum highlining von Quellcode wie beispielsweise Java, Bash oder Python.
 \usepackage{minted}
 \usemintedstyle{emacs}
 
@@ -108,65 +108,65 @@ backend=biber
 
 
 % Packet:           glossaries
-% Beschreibung:     Glossar einbinden und Glossarbefehle bereitstellen 
-% Option:           Gebe Glossar auch als section im Inhaltsverzeichnis aus     
+% Beschreibung:     Glossar einbinden und Glossarbefehle bereitstellen
+% Option:           Gebe Glossar auch als section im Inhaltsverzeichnis aus
 \usepackage[toc,section=section]{glossaries}
 \makeglossaries
 \include{glossar//glossar}
 
 % Start des Dokuments
 \begin{document}
-	
-	% Importiere weitere .tex Dokumente
-	\include{titel//titel}
-	\pagebreak
-	
-	% Pagestyle
-	% Setze das Seitenlayout auf leer um Fuß und Kopfzeilen zu unterdrücken
-	\pagestyle{empty}
-	
-	% Importiere weitere .tex Dokumente
-	%\include{vorwort//vorwort}
-	\include{agenda//agenda}
-	
-	% Pagestyle
-	% Setze das Seitenlayout auf fancyhdr um Fuß- und Kopfzeilen zu setzen
-	\pagestyle{fancy}
-	
-	% Löscht alle Kopf- und Fußzeilen des pagestyles fancyhdr
-	\fancyhf{}
-	
-	% Fuß- und Kopfzeile des Paketes fancyhdr
-	% [L] - Linkeseite      [O] - Ungerade Seitenzahlen         [LE,LO] - Linkeseite, Gerade- und Ungerade Seitenanzahlen
-	% [C] - Mitte           [E] - Gerade Seitenanzahlen         [CE]    - Seitenmitte, nur gerade Seitenanzahlen
-	% [R] - Rechteseite                                         [RO]    - Rechteseite, nur ungerade Seitenanzahlen
-	% \fancyhead    Kopfzeile
-	% \fancyfoot    Fußzeile
-	\fancyhead[L]{\rightmark}
-	\fancyhead[R]{Seite \thepage}
-	
-	% Pixelstärke der Kopfzeilenlinie
-	\renewcommand{\headrulewidth}{1pt}
-	
-	% Setze die Seitenbeginn zurück
-	\setcounter{page}{1}
-	
-	% Importiere weitere .tex Dokumente
-	\include{kapitel//kapitel_01}
-	
-	% Glossar
-	\printglossaries
-	\newpage
-	
-	% Abbildungsverzeichnis
-	\listoffigures
-	\newpage
-	
-	% Literaturverzeichnis
-	\printbibliography
-	
-	% Erklärung
-	%\include{erklaerung//erklaerung}
-	
+
+  % Importiere weitere .tex Dokumente
+  \include{titel//titel}
+  \pagebreak
+
+  % Pagestyle
+  % Setze das Seitenlayout auf leer um Fuß und Kopfzeilen zu unterdrücken
+  \pagestyle{empty}
+
+  % Importiere weitere .tex Dokumente
+  %\include{vorwort//vorwort}
+  \include{agenda//agenda}
+
+  % Pagestyle
+  % Setze das Seitenlayout auf fancyhdr um Fuß- und Kopfzeilen zu setzen
+  \pagestyle{fancy}
+
+  % Löscht alle Kopf- und Fußzeilen des pagestyles fancyhdr
+  \fancyhf{}
+
+  % Fuß- und Kopfzeile des Paketes fancyhdr
+  % [L] - Linkeseite      [O] - Ungerade Seitenzahlen         [LE,LO] - Linkeseite, Gerade- und Ungerade Seitenanzahlen
+  % [C] - Mitte           [E] - Gerade Seitenanzahlen         [CE]    - Seitenmitte, nur gerade Seitenanzahlen
+  % [R] - Rechteseite                                         [RO]    - Rechteseite, nur ungerade Seitenanzahlen
+  % \fancyhead    Kopfzeile
+  % \fancyfoot    Fußzeile
+  \fancyhead[L]{\rightmark}
+  \fancyhead[R]{Seite \thepage}
+
+  % Pixelstärke der Kopfzeilenlinie
+  \renewcommand{\headrulewidth}{1pt}
+
+  % Setze die Seitenbeginn zurück
+  \setcounter{page}{1}
+
+  % Importiere weitere .tex Dokumente
+  \include{kapitel//kapitel_01}
+
+  % Glossar
+  \printglossaries
+  \newpage
+
+  % Abbildungsverzeichnis
+  \listoffigures
+  \newpage
+
+  % Literaturverzeichnis
+  \printbibliography
+
+  % Erklärung
+  %\include{erklaerung//erklaerung}
+
 \end{document}
 
