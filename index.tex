@@ -120,6 +120,7 @@
   % Fetch Commit ID and Date
   \immediate\write18{./git-info.sh commit > git-id.tmp}
   \immediate\write18{./git-info.sh date > git-date.tmp}
+  \immediate\write18{./git-info.sh url > git-url.tmp}
 
   % Importiere weitere .tex Dokumente
   \include{titel//titel}
