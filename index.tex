@@ -117,6 +117,10 @@
 % Start des Dokuments
 \begin{document}
 
+  % Fetch Commit ID and Date
+  \immediate\write18{./git-info.sh commit > git-id.tmp}
+  \immediate\write18{./git-info.sh date > git-date.tmp}
+
   % Importiere weitere .tex Dokumente
   \include{titel//titel}
   \pagebreak
