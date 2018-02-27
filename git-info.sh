@@ -5,7 +5,7 @@ if [ $1 == "date" ]; then
 elif [ $1 == "commit" ]; then
   git rev-parse --short HEAD
 elif [ $1 == "url" ]; then
-  URL=$(git config --get remote.origin.pushurl | sed -e 's#^git@#https://#' -e 's#systems:#systems/#' -e 's#_#\_')
+  URL=$(git config --get remote.origin.pushurl | sed -e 's#^git@#https://#' -e 's#systems:#systems/#' -e 's#_#\\_#g')
   if [ -z "$URL" ]; then
     echo "https://git.cryptic.systems"
   else
