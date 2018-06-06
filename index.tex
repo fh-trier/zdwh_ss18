@@ -3,10 +3,20 @@
 % Option:           extraarticle - ?
 \documentclass[a4paper,14 pt]{extarticle}
 
-% Paket:            a4paper
+% Paket:            geometry
 % Beschreibung:     A4 Seitenabstände
-% Option:           geometry
+% Option:           
 \usepackage[a4paper]{geometry}
+%\geometry{
+%  a4paper,            % Papierformat
+%  top=2cm,            % Abstand Kopfseite
+%  bottom=2cm,         % Abstand Fußseite
+%  nohead=TRUE,        % Keine Kopfzeilen
+%  nofoot=TRUE,        % Keine Fußzeilen
+%  marginparwidth=0cm, % Seitenabstand rechts
+%  marginparsep=0cm,   % 
+%  width=17cm
+%}
 
 % Paket:            ansmath
 % Beschreibung:     Zum darstellen von mathematischen Formeln
@@ -55,7 +65,7 @@
 
 % Paket:            appendix
 % Beschreibung:     Das Paket dient dazu, ausschließlich das Thema einer Überschrift in das Inhaltsverzeichnis zu überführen
-% Option:           appendix - Überführt die Überschriften des Anhangs richtig ins das Inhaltsverzeichnis
+% Option:           
 \usepackage[titletoc]{appendix}
 
 % Paket:            setspace
@@ -69,50 +79,46 @@
 
 % Packet:           Hyperref
 % Beschreibung:     Importiert hyperref um Querverweise mittels \hyperref zu erzeugen.
-\usepackage[]{hyperref}
+\usepackage{hyperref}
 \hypersetup{
-  pdftitle={PDF-Title},
+  pdftitle={Tutorium},
   pdfauthor={Markus Pesch},
-  pdfsubject={PDF-Subject}
+  pdfsubject={Datawarehouse}
 }
 
 % Packet:           Minted
 % Beschreibung:     Dient zum highlining von Quellcode wie beispielsweise Java, Bash oder Python.
 \usepackage{minted}
-\usemintedstyle{emacs}
+%\usemintedstyle{emacs}
+\newmintedfile[inputsql]{sql}{
+  linenos,
+  autogobble,
+  breaklines,
+}
+
+\newmintedfile[inputawk]{awk}{
+  linenos,
+  autogobble,
+  breaklines,
+}
 
 % Packet:           tabularx
 % Beschreibung:     Werden Tabellen mit diesem Paket erstellt, ist es möglich Zeilenumbrüche in einer Zelle zu erzeugen
 \usepackage{tabularx}
 
+% Packet:           framemethod
+\usepackage[framemethod=tikz]{mdframed}
+\mdtheorem[
+  linecolor=red,
+  frametitlefont=\sffamily\bfseries\color{white},
+  frametitlebackgroundcolor=red,
+]{WARN}{Warnung}[subsection]
 
-
-% Paket:            biblatex
-\usepackage[
-  style=authoryear-icomp,  % Zitierstil
-  isbn=false,              % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
-  pagetracker=true,        % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
-  maxbibnames=50,          % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
-  maxcitenames=3,          % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
-  autocite=inline,         % regelt Aussehen für \autocite (inline=\parancite)
-  block=space,             % kleiner horizontaler Platz zwischen den Feldern
-  backref=true,            % Seiten anzeigen, auf denen die Referenz vorkommt
-  backrefstyle=three+,     % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
-  date=short,              % Datumsformat
-  backend=biber
-]{biblatex}
-\setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
-\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
-
-\addbibresource{literatur//bibliothek.bib}
-
-
-% Packet:           glossaries
-% Beschreibung:     Glossar einbinden und Glossarbefehle bereitstellen
-% Option:           Gebe Glossar auch als section im Inhaltsverzeichnis aus
-\usepackage[toc,section=section]{glossaries}
-\makeglossaries
-\include{glossar//glossar}
+\mdtheorem[
+  linecolor=orange,
+  frametitlefont=\sffamily\bfseries\color{white},
+  frametitlebackgroundcolor=orange,
+]{INFO}{Information}[subsection]
 
 % Start des Dokuments
 \begin{document}
@@ -130,9 +136,8 @@
   % Setze das Seitenlayout auf leer um Fuß und Kopfzeilen zu unterdrücken
   \pagestyle{empty}
 
-  % Importiere weitere .tex Dokumente
-  %\include{vorwort//vorwort}
-  \include{agenda//agenda}
+  % Agenda
+  \tableofcontents
 
   % Pagestyle
   % Setze das Seitenlayout auf fancyhdr um Fuß- und Kopfzeilen zu setzen
@@ -148,30 +153,19 @@
   % \fancyhead    Kopfzeile
   % \fancyfoot    Fußzeile
   \fancyhead[L]{\rightmark}
-  \fancyhead[R]{Seite \thepage}
+  \fancyhead[R]{\includegraphics[width=4cm]{img/logo.png}}
+  \fancyfoot[L]{Tutorium XX SSXX}
+  \fancyfoot[C]{}
+  \fancyfoot[R]{Seite \thepage}
 
-  % Pixelstärke der Kopfzeilenlinie
+  % Pixelstärke der Kopf- und Fußzeilenlinie
   \renewcommand{\headrulewidth}{1pt}
+  \renewcommand{\footrulewidth}{1pt}
 
   % Setze die Seitenbeginn zurück
   \setcounter{page}{1}
 
   % Importiere weitere .tex Dokumente
-  \include{kapitel//kapitel_01}
-
-  % Glossar
-  \printglossaries
-  \newpage
-
-  % Abbildungsverzeichnis
-  \listoffigures
-  \newpage
-
-  % Literaturverzeichnis
-  \printbibliography
-
-  % Erklärung
-  %\include{erklaerung//erklaerung}
+  \include{uebungen//uebung_01}
 
 \end{document}
-
