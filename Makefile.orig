@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-build: clean
-=======
-build:
->>>>>>> ad48253... add: tutorium template
-	pdflatex -shell-escape index.tex
-clean:
-	git clean -fX
