@@ -14,10 +14,24 @@ Starten Sie das Skript.
 
 
 \subsubsection*{Boxen}
-\begin{WARN}
+\begin{warn-popup}
   Tabelle fehlt!
-\end{WARN}
+\end{warn-popup}
 
-\begin{INFO}
+\begin{info-popup}
   Tabelle fehlt!
-\end{INFO}
+\end{info-popup}
+
+\subsubsection*{Minted}
+SQL
+\begin{sqlcode}
+  SELECT *
+  FROM tab;
+\end{sqlcode}
+
+AWK
+\begin{awkcode}
+  if NR > 3 {
+    print $0
+  }
+\end{awkcode}
