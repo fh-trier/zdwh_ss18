@@ -31,7 +31,7 @@
 
 % Paket:            utf8
 % Beschreibung:     Stellt Umlaute richtig dar
-% Option:           inputenc - Erlaubt die Darstellung der gleichen Zeichen (Character) wie sie in strin überliefert werden
+% Option:           inputenc - Erlaubt die Darstellung der gleichen Zeichen (Character) wie sie in stdin überliefert werden
 \usepackage[utf8]{inputenc}
 
 % Paket:            makeindex
@@ -64,10 +64,20 @@
 \usepackage{pdflscape}
 
 % Paket:            float
-% Beschreibung:     Zum Ausrichten von Tabellen und Spalten bzw deren zentrierung
+% Beschreibung:     Zum Ausrichten von Tabellen und Spalten bzw. deren Zentrierung
 % Option:
 % Restriktion:      Muss von Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
 \usepackage{float}
+
+% Paket:            multirow
+% Beschreibung:     Zum kombinieren mehrerer Zellen einer Tabelle
+% Option:
+\usepackage{multirow}
+
+% Paket:            courier
+% Beschreibung:     Lädt das Paket courier für Schriftarten mit fester Breite.
+% Befehle:          \ttfamily     Aktiviert Courier füt Tabellen bzw. generelle begin-Blöcke
+\usepackage{courier}
 
 % Paket:            appendix
 % Beschreibung:     Das Paket dient dazu, ausschließlich das Thema einer Überschrift in das Inhaltsverzeichnis zu überführen
@@ -119,18 +129,24 @@
 % Definiere neue aliase um einmalig ein highlighting pro Sprache zu deklarieren
 % \newminted{<makroname>}{optionen} ist verfügbar unter <makroname>_code
 \newminted{awk}{autogobble=true, breaklines=true, linenos=true}
-\newminted{sql}{autogobble=true, breaklines=true, linenos=true}
+\newminted{json}{autogobble=true, breaklines=true, linenos=true}
 \newminted{r}{autogobble=true, breaklines=true, linenos=true}
+\newminted{sql}{autogobble=true, breaklines=true, linenos=true}
+
 
 % newmintedfile
 % Definiere neue Makros um automatisch Sourcecode aus Dateien zu highlighten.
-\newmintedfile[inputawk]{awk}{awkcode}
-\newmintedfile[inputsql]{sql}{sqlcode}
-\newmintedfile[inputr]{r}{rcode}
+\newmintedfile[inputawk]{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
+\newmintedfile[inputjson]{json}{autogobble=true, breaklines=true, linenos=true}
+\newmintedfile[inputsql]{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
+\newmintedfile[inputr]{r}{autogobble=true, breaklines=true, linenos=true}
 
 % newmintinline
 % Definiere neues Makro um Sourcecoude einzeiler zu highlighten
-\newmintinline{r}{autogobble=true, breaklines=true}
+\newmintinline{awk}{awkcode}
+\newmintinline{json}{jsoncode}
+\newmintinline{r}{rcode}
+\newmintinline{sql}{sqlcode}
 
 
 % Packet:           tabularx
