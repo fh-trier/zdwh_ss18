@@ -1,7 +1,7 @@
 % Dokumentanklasse: a4paper, 14pt
 % Beschreibung:     Dokumentenformat
 % Option:           extraarticle - ?
-\documentclass[a4paper, 14pt]{extarticle}
+\documentclass[a4paper, 12pt]{extarticle}
 
 % Paket:            geometry
 % Beschreibung:     A4 Seitenabstände
@@ -9,9 +9,9 @@
 \usepackage{geometry}
 \geometry{
   a4paper,            % Papierformat
-  top=2cm,            % Abstand Kopfseite
+  top=2.7cm,          % Abstand Kopfseite
   bottom=2cm,         % Abstand Fußseite
-  left=2cm,           % Abstand Linkeseite
+  left=2.5cm,         % Abstand Linkeseite
   right=2cm,          % Abstand Rechteseite
 %  nohead=TRUE,        % Keine Kopfzeilen
 %  nofoot=TRUE,        % Keine Fußzeilen
@@ -102,9 +102,9 @@
 % Beschreibung:     Importiert hyperref um Querverweise mittels \hyperref zu erzeugen.
 \usepackage{hyperref}
 \hypersetup{
-  pdftitle={Tutorium},
+  pdftitle={PDF-Title},
   pdfauthor={Markus Pesch},
-  pdfsubject={Datawarehouse}
+  pdfsubject={PDF-Subject}
 }
 
 % Packet:           Minted
@@ -128,18 +128,17 @@
 % newminted
 % Definiere neue aliase um einmalig ein highlighting pro Sprache zu deklarieren
 % \newminted{<makroname>}{optionen} ist verfügbar unter <makroname>_code
-\newminted{awk}{autogobble=true, breaklines=true, linenos=true}
+\newminted{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 \newminted{json}{autogobble=true, breaklines=true, linenos=true}
-\newminted{r}{autogobble=true, breaklines=true, linenos=true}
+\newminted{r}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 \newminted{sql}{autogobble=true, breaklines=true, linenos=true}
-
 
 % newmintedfile
 % Definiere neue Makros um automatisch Sourcecode aus Dateien zu highlighten.
-\newmintedfile[inputawk]{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
-\newmintedfile[inputjson]{json}{autogobble=true, breaklines=true, linenos=true}
-\newmintedfile[inputsql]{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
-\newmintedfile[inputr]{r}{autogobble=true, breaklines=true, linenos=true}
+\newmintedfile[inputawk]{awkcode}{}
+\newmintedfile[inputjson]{jsoncode}{}
+\newmintedfile[inputsql]{sqlcode}{}
+\newmintedfile[inputr]{rcode}{}
 
 % newmintinline
 % Definiere neues Makro um Sourcecoude einzeiler zu highlighten
