@@ -130,15 +130,15 @@
 % \newminted{<makroname>}{optionen} ist verfügbar unter <makroname>_code
 \newminted{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 \newminted{json}{autogobble=true, breaklines=true, linenos=true}
-\newminted{r}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
-\newminted{sql}{autogobble=true, breaklines=true, linenos=true}
+\newminted{r}{autogobble=true, breaklines=true, linenos=true}
+\newminted{sql}{autogobble=true,breaklines=true,linenos=true,keywordcase=upper}
 
 % newmintedfile
 % Definiere neue Makros um automatisch Sourcecode aus Dateien zu highlighten.
-\newmintedfile[inputawk]{awkcode}{}
-\newmintedfile[inputjson]{jsoncode}{}
-\newmintedfile[inputsql]{sqlcode}{}
-\newmintedfile[inputr]{rcode}{}
+\newmintedfile[inputawk]{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
+\newmintedfile[inputjson]{json}{autogobble=true, breaklines=true, linenos=true}
+\newmintedfile[inputr]{r}{autogobble=true, breaklines=true, linenos=true}
+\newmintedfile[inputsql]{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 
 % newmintinline
 % Definiere neues Makro um Sourcecoude einzeiler zu highlighten
@@ -200,7 +200,7 @@
   % \fancyfoot    Fußzeile
   \fancyhead[L]{\rightmark}
   \fancyhead[R]{\includegraphics[width=4cm]{img/logo.png}}
-  \fancyfoot[L]{Tutorium XX SSXX}
+  \fancyfoot[L]{Tutorium XX WS/SSXX}
   \fancyfoot[C]{}
   \fancyfoot[R]{Seite \thepage}
 
