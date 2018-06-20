@@ -5,7 +5,7 @@
 
 % Paket:            geometry
 % Beschreibung:     A4 Seitenabstände
-% Option:           
+% Option:
 \usepackage{geometry}
 \geometry{
   a4paper,            % Papierformat
@@ -16,7 +16,7 @@
 %  nohead=TRUE,        % Keine Kopfzeilen
 %  nofoot=TRUE,        % Keine Fußzeilen
 %  marginparwidth=0cm, % Seitenabstand rechts
-%  marginparsep=0cm,   % 
+%  marginparsep=0cm,   %
 %  width=17cm
 }
 
@@ -109,8 +109,8 @@
 
 % Packet:           Minted
 % Beschreibung:     Dient zum highlining von Quellcode wie beispielsweise Java, Bash oder Python.
-% Option/en:             
-%   autogobble:       Leerzeichen zwischen linken Rand und Sourcecode einrücken bzw. weg schneiden. 
+% Option/en:
+%   autogobble:       Leerzeichen zwischen linken Rand und Sourcecode einrücken bzw. weg schneiden.
 %   breaklines:       Automatische Zeilenumbrüche
 %   cache:            de- oder aktiviert den cache um Sourcecode zwischen zu speichern und so das PDF schneller zu erzeugen
 %   cachedir:         Definiert den Pfad zum cache, an dem minted seine Daten zwischen speichern kann
@@ -151,6 +151,17 @@
 % Packet:           tabularx
 % Beschreibung:     Werden Tabellen mit diesem Paket erstellt, ist es möglich Zeilenumbrüche in einer Zelle zu erzeugen
 \usepackage{tabularx}
+
+% Packet:           xcolor
+% Beschreibung:     Define own color schemas
+% Option:
+\usepackage{xcolor}
+
+% Definiere Farben
+\definecolor{blue}{HTML}{2E579F}
+\definecolor{orange}{HTML}{FF7F00}
+\definecolor{red}{HTML}{FB4E3A}
+\definecolor{white}{HTML}{FFFFFF}
 
 % Packet:           framemethod
 \usepackage[framemethod=tikz]{mdframed}
