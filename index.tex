@@ -1,23 +1,27 @@
 % Dokumentanklasse: a4paper, 14pt
 % Beschreibung:     Dokumentenformat
 % Option:           extraarticle - ?
-\documentclass[a4paper, 12pt]{extarticle}
+\documentclass[12pt]{article}
 
 % Paket:            geometry
 % Beschreibung:     A4 Seitenabstände
 % Option:
 \usepackage{geometry}
 \geometry{
-  a4paper,            % Papierformat
-  top=2.7cm,          % Abstand Kopfseite
-  bottom=2cm,         % Abstand Fußseite
-  left=2.5cm,         % Abstand Linkeseite
-  right=2cm,          % Abstand Rechteseite
-%  nohead=TRUE,        % Keine Kopfzeilen
-%  nofoot=TRUE,        % Keine Fußzeilen
-%  marginparwidth=0cm, % Seitenabstand rechts
-%  marginparsep=0cm,   %
-%  width=17cm
+%  a4paper,           % Papierformat (wird auch über die Dokumentenklasse definiert)
+  top=2.7cm,          % Abstand Kopfseite   (Zwischen Kopfseite und Inhalt)
+  bottom=2cm,         % Abstand Fußseite    (Zwischen Fußseite und Inhalt)
+  left=2.5cm,         % Abstand Linkeseite  (Zwischen Linkerseite und Inhalt)
+  right=2cm,          % Abstand Rechteseite (Zwischen Recherseite und Inhalt)
+%  width=              %                    textwidth (+marginsep +marinparwidth)
+%  textwidth=15cm,     % Textbreite
+%  marginparsep=1cm,   % Randnotiztrennng
+%  marginparwidth=10cm,% Randnotizbreite
+%  height=             %                    textheight (+headheight +headsep + footskip)
+%  textheight=        % Texthöhe
+  headheight=1cm,     % Kopfhöhe
+  headsep=0.5cm,      % Kopftrennung        (Größe zwischen Kopfzeile und Inhalt)
+  footskip=1cm,       % Fußzeilenhöhe
 }
 
 % Paket:            ansmath
