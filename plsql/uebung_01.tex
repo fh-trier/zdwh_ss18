@@ -1,0 +1,83 @@
+\section{Übung}
+\label{sec:uebung_01}
+
+% ##########################################################################
+% ############################### Aufgabe 01 ###############################
+% ##########################################################################
+\subsection{Aufgabe}
+\label{sec:uebung_01.aufgabe_01}
+Starten Sie das Skript.
+
+\subsubsection*{Lösung}
+\label{sec:uebung_01.aufgabe_01.loesung}
+
+\subsubsection*{Minted}
+
+
+\section{Minted}
+
+\subsection{Begin-Block}
+
+\subsubsection{SQL-Code}
+\begin{sqlcode}
+  SELECT *
+  FROM tab;
+\end{sqlcode}
+
+\subsubsection{AWK-Code}
+\begin{awkcode}
+  if NR > 3 {
+    print "0";
+  }
+\end{awkcode}
+
+
+\subsection{Inputfile}
+
+\subsubsection{SQL-Code}
+\inputsql{sql/test.sql}
+
+\subsection{Inline}
+\subsubsection{SQL-Code}
+\sqlinline{SELECT * FROM tab;}
+
+\section{Info-Boxen}
+\begin{warn-popup}
+  Warn-Popup
+\end{warn-popup}
+
+\begin{info-popup}
+  Info-Popup
+\end{info-popup}
+
+\begin{example-popup}
+  Example-Popup
+\end{example-popup}
+
+
+\section{Akronyme}
+\acrfull{acr:sql}
+
+\section{Text-Boxen}
+\begin{textblock*}{\textwidth}(4cm,0cm)
+  Ich bin eine Textbox
+\end{textblock*}
+
+\section{Aufzählungen}
+\begin{itemize}[itemsep=0pt]
+  \item Item
+  \item Item
+  \item Item
+\end{itemize}
+
+\begin{enumerate}[itemsep=0pt]
+  \item Item
+  \item Item
+  \item Item
+\end{enumerate}
+
+\begin{itemize}[itemsep=0pt]
+  \item[A)] Item
+  \item[B)] Item
+  \item[C)] Item
+\end{itemize}
