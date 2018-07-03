@@ -1,7 +1,4 @@
--- ###################################################
 -- ############## CHECK CONSTRAINT ###################
--- ###################################################
-
 -- Allgemeine Syntax
 ALTER TABLE <HAUPTTABELLE>
 ADD CONSTRAINT <BEZEICHNUNG>
@@ -22,4 +19,3 @@ CHECK (
   medikament IN (0,1) AND
   rezeptpflichtig IN (0,1)
 );
-

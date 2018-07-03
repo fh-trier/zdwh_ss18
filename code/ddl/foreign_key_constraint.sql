@@ -1,7 +1,4 @@
--- ###################################################
 -- ############ FOREIGN KEY CONSTRAINT ###############
--- ###################################################
-
 -- Allgemeine Syntax
 ALTER TABLE <tabellenname>
 ADD CONSTRAINT <constraintname>
@@ -22,11 +19,10 @@ ADD CONSTRAINT "FK_KLAUS_BEZIEH_ANGEBO_ANGEBOT"
   FOREIGN KEY (studiengangnr, fachnr)
   REFERENCES angebot(studiengangnr, fachnr);
 
-
-
--- DEFERRABLE Constraints, Verzögert die Constraintüberprüfung bis zur Eingabe eines COMMITs.
--- Um das Standard-Verhalten eines DEFERABLE Constraints festzulegen,
--- kann er mit der Klausel INITIALLY IMMEDIATE (sofortige Prüfung) oder
+-- DEFERRABLE Constraints, Verzögert die Constraintüberprüfung
+-- bis zur Eingabe eines COMMITs. Um das Standard-Verhalten
+-- eines DEFERABLE Constraints festzulegen, kann er mit der
+-- Klausel INITIALLY IMMEDIATE (sofortige Prüfung) oder
 -- INITIALLY DEFERRED (verzögerte Prüfung) definiert werden.
 
 -- DEFERRABLE INITIALLY DEFERRED
@@ -42,6 +38,3 @@ ADD CONSTRAINT "FK_KLAUS_BEZIEH_ANGEBO_KLAUSUNR"
   FOREIGN KEY (klausurnr)
   REFERENCES KLAUSUR (klausurnr)
   DEFERRABLE INITIALLY ENABLED;
-
-
-

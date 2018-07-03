@@ -1,7 +1,4 @@
--- ###################################################
 -- ############ PRIMARY KEY CONSTRAINT ###############
--- ###################################################
-
 -- ALTER TABLE
 ALTER TABLE <table_name>
 ADD CONSTRAINT <constraint_name>
@@ -11,7 +8,6 @@ ADD CONSTRAINT <constraint_name>
 ALTER TABLE verkauf
 ADD CONSTRAINT pk_vnr
   PRIMARY KEY (vnr);
-
 
 -- CREATE TABLE
 CREATE TABLE <table_name> (
