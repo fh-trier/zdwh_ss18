@@ -1,4 +1,5 @@
 -- Geben Sie die 3 Mitarbeiter mit dem geringsten Gehalt aus
+CREATE OR REPLACE VIEW "SNIPPET_OLAP_RANK_1" AS
 SELECT *
 FROM (
   SELECT
