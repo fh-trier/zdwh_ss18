@@ -1,18 +1,22 @@
--- Partition By
--- Beispiel 1:
--- Für jeden Mitarbeiter soll die Summe der Gehälter innerhalb seiner Abteilung ausgegeben werden
-SELECT  ename,
-        deptno,
-        job,
-        sal,
-        SUM(sal) OVER (PARTITION BY deptno) "Summe Gehalt"
+-- Für jeden Mitarbeiter soll die Summe der Gehälter
+-- innerhalb seiner Abteilung ausgegeben werden
+CREATE OR REPLACE VIEW "SNIPPET_OLAP_PARTITION_BY_1" AS
+SELECT
+  ename,
+  deptno,
+  job,
+  sal,
+  SUM(sal) OVER (PARTITION BY deptno) AS "SUM_SALARY"
 FROM emp;
 
--- Beispiel 2:
--- Für jeden Mitarbeiter soll die Summe der Gehälter innerhalb seiner Abteilung mit dem gleichen Job ausgegeben werden
-SELECT  ename,
-        deptno,
-        job,
-        sal,
-        SUM(sal) OVER (PARTITION BY deptno, job) "Summe Gehalt"
+-- Für jeden Mitarbeiter soll die Summe der Gehälter
+-- innerhalb seiner Abteilung mit dem gleichen Job ausgegeben
+-- werden
+CREATE OR REPLACE VIEW "SNIPPET_OLAP_PARTITION_BY_2" AS
+SELECT
+  ename,
+  deptno,
+  job,
+  sal,
+  SUM(sal) OVER (PARTITION BY deptno, job) AS "SUM_SALARY"
 FROM emp;
