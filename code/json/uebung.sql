@@ -114,7 +114,3 @@ SELECT JSON_VALUE(jsonord, '$.index' default 'NA' on error) "INDEX",
 	     JSON_VALUE(jsonord, '$.status') "STATUS"
 FROM weborders
 WHERE JSON_EXISTS(jsonord, '$.status');
-
-
-
-
