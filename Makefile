@@ -2,12 +2,12 @@
 IMAGE:=blang/latex:ubuntu
 
 # Input tex-file and output pdf-file
-TEX_NAME := "index.tex"
-PDF_NAME := "index.pdf"
+TEX_NAME := index.tex
+PDF_NAME := index.pdf
 
 # Hardlink-Path and Hardlink-File
-HARDLINK_PATH := "${HOME}/pdf"
-HARDLINK_FILE := "tmp.pdf"
+HARDLINK_PATH := ${HOME}/pdf
+HARDLINK_FILE := tmp.pdf
 
 pdf:
 	pdflatex \
@@ -29,13 +29,13 @@ clean:
 create-hardlink: delete-hardlink pdf
 	if [ ! -d ${HARDLINK_PATH} ]; \
 	then \
-		mkdir ${HARDLINK_PATH}; \
+		mkdir -p ${HARDLINK_PATH}; \
 	fi;
 
-	ln "${PWD}/${PDF_NAME}" ${HARDLINK_PATH}/${HARDLINK_FILE}; \
+	ln ${PWD}/${PDF_NAME} ${HARDLINK_PATH}/${HARDLINK_FILE}; \
 
 delete-hardlink:
-	if [ -d ${HARDLINK_PATH} ]; \
+	if [ -f ${HARDLINK_PATH}/${HARDLINK_FILE} ]; \
 	then \
-		rm -R ${HARDLINK_PATH}; \
+		rm -R ${HARDLINK_PATH}/${HARDLINK_FILE}; \
 	fi;
