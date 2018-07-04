@@ -23,8 +23,8 @@ TEX_FILE:=${FILE}.tex
 
 # Hardlink Options
 FSD?=${HOME}/Dokumente/Studium/Fachschaftsdaten
-HARDLINK_PATH:=${FSD}
-HARDLINK_FILE:=index.pdf
+HARDLINK_PATH:=${FSD}/DWH_-_Data_Warehouse/Zusammenfassungen
+HARDLINK_FILE:=Zusammenfassung_SS18.pdf
 
 # latexmk
 # compile the pdf file with latexmk
