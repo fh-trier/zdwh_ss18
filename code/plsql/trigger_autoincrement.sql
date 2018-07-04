@@ -1,9 +1,5 @@
--- ###################################################
--- #################### INTERVAL #####################
--- ###################################################
-
 -- Sequenz erstellen
-CREATE SEQUENCE seq1
+CREATE SEQUENCE "seq1"
 START WITH 1
 INCREMENT BY 1
 NOMAXVALUE
@@ -11,8 +7,8 @@ NOCYCLE
 CACHE 20;
 
 -- Trigger erstellen mit AutoIncrement
-CREATE OR REPLACE TRIGGER tri1
-BEFORE INSERT OR UPDATE OF tbl1 ON col1
+CREATE OR REPLACE TRIGGER "tri1"
+BEFORE INSERT OR UPDATE OF "tbl1" ON "col1"
 FOR EACH ROW
 DECLARE
 
