@@ -1,30 +1,41 @@
-TEX:=index.tex
+# Docker Image
 IMAGE:=blang/latex:ubuntu
 
-HARDLINK_PATH := "${HOME}/Dokumente/Studium/Fachschaftdaten/tmp.pdf"
+# Input tex-file and output pdf-file
+TEX_NAME := "index.tex"
+PDF_NAME := "index.pdf"
 
-create-hardlink: delete-hardlink pdf
-	ln "${PWD}/index.pdf" ${HARDLINK_PATH}
+# Hardlink-Path and Hardlink-File
+HARDLINK_PATH := "${HOME}/pdf"
+HARDLINK_FILE := "tmp.pdf"
 
 pdf:
 	pdflatex \
 		-shell-escape \
 		-synctex=1 \
 		-interaction=nonstopmode \
-		-enable-write18 "${TEX}"
+		-enable-write18 "${TEX_NAME}"
 
 docker-pdf:
 	./latexdockercmd.sh pdflatex \
 		-shell-escape \
 		-synctex=1 \
 		-interaction=nonstopmode \
-		-enable-write18 "${TEX}"
+		-enable-write18 "${TEX_NAME}"
 
 clean:
 	git clean -fX
 
-delete-hardlink:
-	if [ -f ${HARDLINK_PATH} ]; \
+create-hardlink: delete-hardlink pdf
+	if [ ! -d ${HARDLINK_PATH} ]; \
 	then \
-		rm ${HARDLINK_PATH} ; \
+		mkdir ${HARDLINK_PATH}; \
+	fi;
+
+	ln "${PWD}/${PDF_NAME}" ${HARDLINK_PATH}/${HARDLINK_FILE}; \
+
+delete-hardlink:
+	if [ -d ${HARDLINK_PATH} ]; \
+	then \
+		rm -R ${HARDLINK_PATH}; \
 	fi;
