@@ -12,7 +12,7 @@
         "name": "latexmk",
         "command": "latexmk",
         "args": [
-            "--shell-escape", // added arg to default
+            "-shell-escape", // added arg to default
             "-synctex=1",
             "-interaction=nonstopmode",
             "-file-line-error",
@@ -24,7 +24,7 @@
         "name": "pdflatex",
         "command": "pdflatex",
         "args": [
-            "--shell-escape", // added arg to default
+            "-shell-escape", // added arg to default
             "-synctex=1",
             "-interaction=nonstopmode",
             "-file-line-error",
@@ -40,7 +40,4 @@
     }
   ],
   "latex-workshop.view.pdf.viewer": "tab",
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
 }
