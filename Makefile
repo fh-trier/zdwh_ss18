@@ -5,7 +5,7 @@ pdf:
 	pdflatex \
 		-shell-escape \
 		-synctex=1 \
-		--interaction=nonstopmode \
+		-interaction=nonstopmode \
 		-enable-write18 "${TEX}"
 docker-pdf:
 	./latexdockercmd.sh pdflatex \
