@@ -3,6 +3,11 @@
 % Option:           extraarticle - ?
 \documentclass[12pt]{article}
 
+% Paket:            showframe
+% Beschreibung:     Blendet alle Frames (Textkörper, Fußzeile Kopzeile, Seitenrand) ein
+% Option:
+% \usepackage{showframe}
+
 % Paket:            geometry
 % Beschreibung:     A4 Seitenabstände
 % Option:
@@ -27,6 +32,11 @@
 % Paket:            ansmath
 % Beschreibung:     Zum darstellen von mathematischen Formeln
 \usepackage{amsmath}
+
+% Paket:            eurosym
+% Beschreibung:     Bildet das Euro-Zeichen in unterschiedlichen Varianten ab
+% Option:
+\usepackage{eurosym}
 
 % Paket:            ngerman
 % Beschreibung:     Deutsche Rechtschreibung
@@ -212,13 +222,6 @@
   \pagebreak
 
   % Pagestyle
-  % Setze das Seitenlayout auf leer um Fuß und Kopfzeilen zu unterdrücken
-  \pagestyle{empty}
-
-  % Agenda
-  \tableofcontents
-
-  % Pagestyle
   % Setze das Seitenlayout auf fancyhdr um Fuß- und Kopfzeilen zu setzen
   \pagestyle{fancy}
 
@@ -233,16 +236,20 @@
   % \fancyfoot    Fußzeile
   \fancyhead[L]{\rightmark}
   \fancyhead[R]{\includegraphics[width=4cm]{img/logo.png}}
-  \fancyfoot[L]{Tutorium XX WS/SSXX}
+  \fancyfoot[L]{$<Modul>$ $<Semester>$ - $<Typ>$}
   \fancyfoot[C]{}
-  \fancyfoot[R]{Seite \thepage}
 
   % Pixelstärke der Kopf- und Fußzeilenlinie
   \renewcommand{\headrulewidth}{1pt}
   \renewcommand{\footrulewidth}{1pt}
 
+  % Agenda
+  \tableofcontents
+  \pagebreak
+
   % Setze die Seitenbeginn zurück
   \setcounter{page}{1}
+  \fancyfoot[R]{Seite \thepage}
 
   % Importiere weitere .tex Dokumente
   \include{uebungen//uebung_01}
