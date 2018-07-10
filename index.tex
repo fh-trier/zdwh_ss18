@@ -88,6 +88,13 @@
 % Option:           appendix - Überführt die Überschriften des Anhangs richtig ins das Inhaltsverzeichnis
 \usepackage[titletoc]{appendix}
 
+% Paket:            glossaries
+% Beschreibung:
+% Option:
+\usepackage[toc,acronyms]{glossaries}
+\makeglossaries
+\include{glossar/glossar}
+
 % Paket:            setspace
 % Beschreibung:     Setz über die optionen den Zeilenabstand
 % Optionen:         Möglicher Zeilenabstand
@@ -96,11 +103,6 @@
 %                   doublespacing = 2,0
 % Restriktion:      Muss von Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
 \usepackage[onehalfspacing]{setspace}
-
-% Paket:            courier
-% Beschreibung:     Läd die Schriftart courier. Courier besitzt feste Schriftbreiten.
-% Option:
-\usepackage{courier}
 
 % Paket:            verbatim
 % Beschreibung:     Bildet einen Quelltext exakt ab.
@@ -136,14 +138,16 @@
 
 % newminted
 % Definiere neue aliase um einmalig ein highlighting pro Sprache zu deklarieren
-% \newminted{<makroname>}{optionen} ist verfügbar unter <makroname>_code
+% \newminted{<makroname>}{optionen} ist verfügbar unter "<makroname>code"
 \newminted{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 \newminted{json}{autogobble=true, breaklines=true, linenos=true}
 \newminted{r}{autogobble=true, breaklines=true, linenos=true}
-\newminted{sql}{autogobble=true,breaklines=true,linenos=true,keywordcase=upper}
+\newminted{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
+\newminted{xml}{autogobble=true, breaklines=true, linenos=true}
 
 % newmintedfile
 % Definiere neue Makros um automatisch Sourcecode aus Dateien zu highlighten.
+% \makroname{Dateipfad}
 \newmintedfile[inputawk]{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 \newmintedfile[inputjson]{json}{autogobble=true, breaklines=true, linenos=true}
 \newmintedfile[inputr]{r}{autogobble=true, breaklines=true, linenos=true}
@@ -151,11 +155,11 @@
 
 % newmintinline
 % Definiere neues Makro um Sourcecoude einzeiler zu highlighten
+% \begin{awkcode} \end{awkcode}
 \newmintinline{awk}{awkcode}
 \newmintinline{json}{jsoncode}
 \newmintinline{r}{rcode}
 \newmintinline{sql}{sqlcode}
-
 
 % Packet:           tabularx
 % Beschreibung:     Werden Tabellen mit diesem Paket erstellt, ist es möglich Zeilenumbrüche in einer Zelle zu erzeugen
@@ -168,11 +172,14 @@
 
 % Definiere Farben
 \definecolor{blue}{HTML}{2E579F}
+\definecolor{green}{HTML}{1B8347}
 \definecolor{orange}{HTML}{FF7F00}
-\definecolor{red}{HTML}{FB4E3A}
+\definecolor{red}{HTML}{D31C27}
 \definecolor{white}{HTML}{FFFFFF}
 
 % Packet:           framemethod
+% Beschreibung:
+% Option:
 \usepackage[framemethod=tikz]{mdframed}
 \mdtheorem[
   linecolor=red,
@@ -185,6 +192,12 @@
   frametitlefont=\sffamily\bfseries\color{white},
   frametitlebackgroundcolor=orange,
 ]{info-popup}{Information}[subsection]
+
+\mdtheorem[
+  linecolor=green,
+  frametitlefont=\sffamily\bfseries\color{white},
+  frametitlebackgroundcolor=green,
+]{example-popup}{Beispiel}
 
 % Start des Dokuments
 \begin{document}
@@ -233,5 +246,14 @@
 
   % Importiere weitere .tex Dokumente
   \include{uebungen//uebung_01}
+
+  % Aufzählung aller Bilder
+  % \listoffigures
+
+  % Aufzählung aller Tabellen
+  % \listoftables
+
+  % Glossary
+  \printglossaries
 
 \end{document}

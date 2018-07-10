@@ -11,28 +11,47 @@ Starten Sie das Skript.
 \subsubsection*{Lösung}
 \label{sec:uebung_01.aufgabe_01.loesung}
 
-\subsubsection*{Boxen}
-\begin{warn-popup}
-  Tabelle fehlt!
-\end{warn-popup}
-
-\begin{info-popup}
-  Tabelle fehlt!
-\end{info-popup}
-
 \subsubsection*{Minted}
-SQL
+
+
+\section{Minted}
+
+\subsection{Begin-Block}
+
+\subsubsection{SQL-Code}
 \begin{sqlcode}
   SELECT *
   FROM tab;
 \end{sqlcode}
 
-AWK
+\subsubsection{AWK-Code}
 \begin{awkcode}
   if NR > 3 {
-    print $0
+    print "0";
   }
 \end{awkcode}
 
 
+\subsection{Inputfile}
+
+\subsubsection{SQL-Code}
 \inputsql{sql/test.sql}
+
+
+\section{Boxen}
+\begin{warn-popup}
+  Warn-Popup
+\end{warn-popup}
+
+\begin{info-popup}
+  Info-Popup
+\end{info-popup}
+
+\begin{example-popup}
+  Example-Popup
+\end{example-popup}
+
+\section{Glossar}
+
+\section{Akronyme}
+\acrfull{acr:sql}

@@ -1,27 +1,51 @@
 # Docker Image
-IMAGE:=blang/latex:ubuntu
+IMAGE := volkerraschek/docker-latex:latest
 
 # Input tex-file and output pdf-file
-TEX_NAME := index.tex
-PDF_NAME := index.pdf
+FILE := index
+TEX_NAME := ${FILE}.tex
+PDF_NAME := ${FILE}.pdf
 
 # Hardlink-Path and Hardlink-File
 HARDLINK_PATH := ${HOME}/pdf
 HARDLINK_FILE := tmp.pdf
 
-pdf:
+latexmk:
+	latexmk \
+		-shell-escape \
+		-synctex=1 \
+		-interaction=nonstopmode \
+		-file-line-error \
+		-pdf ${TEX_NAME}
+
+pdflatex: makeglossar makeindex
 	pdflatex \
 		-shell-escape \
 		-synctex=1 \
 		-interaction=nonstopmode \
 		-enable-write18 "${TEX_NAME}"
 
-docker-pdf:
-	./latexdockercmd.sh pdflatex \
-		-shell-escape \
-		-synctex=1 \
-		-interaction=nonstopmode \
-		-enable-write18 "${TEX_NAME}"
+makeglossar:
+	makeglossaries "${FILE}"
+
+makeindex:
+	makeindex "${FILE}.idx"
+
+docker-latexmk:
+	docker run \
+		--rm \
+		--user="$(shell id -u):$(shell id -g)" \
+		--net="none" \
+		--volume="${PWD}:/data" ${IMAGE} \
+		make latexmk
+
+docker-pdflatex:
+	docker run \
+		--rm \
+		--user="$(shell id -u):$(shell id -g)" \
+		--net="none" \
+		--volume="${PWD}:/data" ${IMAGE} \
+		make pdflatex
 
 clean:
 	git clean -fX
