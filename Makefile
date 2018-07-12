@@ -50,7 +50,7 @@ docker-pdflatex:
 clean:
 	git clean -fX
 
-create-hardlink: delete-hardlink pdf
+create-hardlink: delete-hardlink latexmk
 	if [ ! -d ${HARDLINK_PATH} ]; \
 	then \
 		mkdir -p ${HARDLINK_PATH}; \
