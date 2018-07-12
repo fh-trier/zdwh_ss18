@@ -12,6 +12,7 @@ HARDLINK_FILE := tmp.pdf
 
 latexmk:
 	latexmk \
+		-aux-directory=/tmp/aux \
 		-shell-escape \
 		-synctex=1 \
 		-interaction=nonstopmode \
