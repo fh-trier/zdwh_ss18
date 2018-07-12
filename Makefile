@@ -30,6 +30,7 @@ HARDLINK_FILE:=index.pdf
 # compile the pdf file with latexmk
 latexmk:
 	latexmk \
+		-aux-directory=\tmp\aux \
 		-shell-escape \
 		-synctex=1 \
 		-interaction=nonstopmode \
