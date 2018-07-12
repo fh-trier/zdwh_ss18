@@ -37,8 +37,11 @@ Starten Sie das Skript.
 \subsubsection{SQL-Code}
 \inputsql{sql/test.sql}
 
+\subsection{Inline}
+\subsubsection{SQL-Code}
+\sqlinline{SELECT * FROM tab;}
 
-\section{Boxen}
+\section{Info-Boxen}
 \begin{warn-popup}
   Warn-Popup
 \end{warn-popup}
@@ -51,7 +54,30 @@ Starten Sie das Skript.
   Example-Popup
 \end{example-popup}
 
-\section{Glossar}
 
 \section{Akronyme}
 \acrfull{acr:sql}
+
+\section{Text-Boxen}
+\begin{textblock*}{\textwidth}(4cm,0cm)
+  Ich bin eine Textbox
+\end{textblock*}
+
+\section{Aufzählungen}
+\begin{itemize}[itemsep=0pt]
+  \item Item
+  \item Item
+  \item Item
+\end{itemize}
+
+\begin{enumerate}[itemsep=0pt]
+  \item Item
+  \item Item
+  \item Item
+\end{enumerate}
+
+\begin{itemize}[itemsep=0pt]
+  \item[A)] Item
+  \item[B)] Item
+  \item[C)] Item
+\end{itemize}

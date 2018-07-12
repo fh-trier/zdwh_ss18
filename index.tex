@@ -3,113 +3,6 @@
 % Option:           extraarticle - ?
 \documentclass[12pt]{article}
 
-% Paket:            showframe
-% Beschreibung:     Blendet alle Frames (Textkörper, Fußzeile Kopzeile, Seitenrand) ein
-% Option:
-% \usepackage{showframe}
-
-% Paket:            geometry
-% Beschreibung:     A4 Seitenabstände
-% Option:
-\usepackage{geometry}
-\geometry{
-%  a4paper,           % Papierformat (wird auch über die Dokumentenklasse definiert)
-  top=2.7cm,          % Abstand Kopfseite   (Zwischen Kopfseite und Inhalt)
-  bottom=2cm,         % Abstand Fußseite    (Zwischen Fußseite und Inhalt)
-  left=2.5cm,         % Abstand Linkeseite  (Zwischen Linkerseite und Inhalt)
-  right=2cm,          % Abstand Rechteseite (Zwischen Recherseite und Inhalt)
-%  width=              %                    textwidth (+marginsep +marinparwidth)
-%  textwidth=15cm,     % Textbreite
-%  marginparsep=1cm,   % Randnotiztrennng
-%  marginparwidth=10cm,% Randnotizbreite
-%  height=             %                    textheight (+headheight +headsep + footskip)
-%  textheight=        % Texthöhe
-  headheight=1cm,     % Kopfhöhe
-  headsep=0.5cm,      % Kopftrennung        (Größe zwischen Kopfzeile und Inhalt)
-  footskip=1cm,       % Fußzeilenhöhe
-}
-
-% Paket:            ansmath
-% Beschreibung:     Zum darstellen von mathematischen Formeln
-\usepackage{amsmath}
-
-% Paket:            textpos
-% Beschreibung:     Zum erstellen von Textboxen
-% \begin{textblock*}{\textwidth}(0cm,0.5cm)
-\usepackage{textpos}
-
-% Paket:            eurosym
-% Beschreibung:     Bildet das Euro-Zeichen in unterschiedlichen Varianten ab
-% Option:
-\usepackage{eurosym}
-
-% Paket:            ngerman
-% Beschreibung:     Deutsche Rechtschreibung
-% Option:           babel - Sibentrennung
-\usepackage[ngerman]{babel}
-
-% Paket:            utf8
-% Beschreibung:     Stellt Umlaute richtig dar
-% Option:           inputenc - Erlaubt die Darstellung der gleichen Zeichen (Character) wie sie in stdin überliefert werden
-\usepackage[utf8]{inputenc}
-
-% Paket:            makeindex
-% Beschreibung:     Ermöglicht das Indexieren von Wörter und den Befehl \printindex um den Index auszugeben
-\usepackage{makeidx}
-\makeindex
-
-% Paket:            natbib
-% Beschreibung:     Für Zitate
-% Option:           round - ?
-%\usepackage[round]{natbib}
-
-% Paket:            fancyhdr
-% Beschreibung:     Ermöglich ein generelles Seitenlayout ein zu stellen mit Kopf und Fußzeile.
-\usepackage{fancyhdr}
-
-% Paket:            graphicx
-% Beschreibung:     Einbinden von Bildern
-% Option:
-\usepackage{graphicx}
-
-% Paket:            enumitem
-% Beschreibung:     Zeilenabstände bei Aufzählungen definieren
-% Option:
-\usepackage{enumitem}
-
-% Paket:            pdflscape
-% Beschreibung:     Ermöglicht Seiten horizontal darzustellen
-% Option:           \begin{landscape} \end{landscape}
-\usepackage{pdflscape}
-
-% Paket:            float
-% Beschreibung:     Zum Ausrichten von Tabellen und Spalten bzw. deren Zentrierung
-% Option:
-% Restriktion:      Muss von Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
-\usepackage{float}
-
-% Paket:            multirow
-% Beschreibung:     Zum kombinieren mehrerer Zellen einer Tabelle
-% Option:
-\usepackage{multirow}
-
-% Paket:            courier
-% Beschreibung:     Lädt das Paket courier für Schriftarten mit fester Breite.
-% Befehle:          \ttfamily     Aktiviert Courier füt Tabellen bzw. generelle begin-Blöcke
-\usepackage{courier}
-
-% Paket:            appendix
-% Beschreibung:     Das Paket dient dazu, ausschließlich das Thema einer Überschrift in das Inhaltsverzeichnis zu überführen
-% Option:           appendix - Überführt die Überschriften des Anhangs richtig ins das Inhaltsverzeichnis
-\usepackage[titletoc]{appendix}
-
-% Paket:            glossaries
-% Beschreibung:
-% Option:
-\usepackage[toc,acronyms]{glossaries}
-\makeglossaries
-\include{glossar/glossar}
-
 % Paket:            setspace
 % Beschreibung:     Setz über die optionen den Zeilenabstand
 % Optionen:         Möglicher Zeilenabstand
@@ -119,78 +12,39 @@
 % Restriktion:      Muss von Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
 \usepackage[onehalfspacing]{setspace}
 
-% Paket:            verbatim
-% Beschreibung:     Bildet einen Quelltext exakt ab.
-% Options:
-\usepackage{verbatim}
+% Paket:            appendix
+% Beschreibung:     Das Paket dient dazu, ausschließlich das Thema einer Überschrift in das Inhaltsverzeichnis zu überführen
+% Option:           appendix - Überführt die Überschriften des Anhangs richtig ins das Inhaltsverzeichnis
+\usepackage[titletoc]{appendix}
 
-% Packet:           Hyperref
-% Beschreibung:     Importiert hyperref um Querverweise mittels \hyperref zu erzeugen.
-\usepackage{hyperref}
-\hypersetup{
-  pdftitle={PDF-Title},
-  pdfauthor={Markus Pesch},
-  pdfsubject={PDF-Subject}
-}
+% Paket:            ansmath
+% Beschreibung:     Zum darstellen von mathematischen Formeln
+\usepackage{amsmath}
 
-% Packet:           Minted
-% Beschreibung:     Dient zum highlining von Quellcode wie beispielsweise Java, Bash oder Python.
-% Option/en:
-%   autogobble:       Leerzeichen zwischen linken Rand und Sourcecode einrücken bzw. weg schneiden.
-%   breaklines:       Automatische Zeilenumbrüche
-%   cache:            de- oder aktiviert den cache um Sourcecode zwischen zu speichern und so das PDF schneller zu erzeugen
-%   cachedir:         Definiert den Pfad zum cache, an dem minted seine Daten zwischen speichern kann
-%   fontfamily:       Die Schriftart die benutzt werden soll. tt, courier und helvetica sind vordefiniert.
-%   fontsize:         Die Schriftgröße die benutzt werden soll. Beispielsweise fontsize=\footnotesize
-%   linenos:          Zeilennummern
-%   keywordcase:      Änderung der Buchstaben. Takes lower, upper, or capitalize.
-%   showspaces:       Blendet Leerzeichen ein
-\usepackage[cache=true, cachedir=/tmp/minted]{minted}
+% Paket:            courier
+% Beschreibung:     Lädt das Paket courier für Schriftarten mit fester Breite.
+% Befehle:          \ttfamily     Aktiviert Courier füt Tabellen bzw. generelle begin-Blöcke
+\usepackage{courier}
 
-% usemintedstyle
-% Gebe 'pygmentize -L styles' im Terminal ein um alle verfügbaren styles anzuzeigen.
-\usemintedstyle{tango}
-
-% newminted
-% Definiere neue aliase um einmalig ein highlighting pro Sprache zu deklarieren
-% \newminted{<makroname>}{optionen} ist verfügbar unter "<makroname>code"
-\newminted{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
-\newminted{json}{autogobble=true, breaklines=true, linenos=true}
-\newminted{r}{autogobble=true, breaklines=true, linenos=true}
-\newminted{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
-\newminted{xml}{autogobble=true, breaklines=true, linenos=true}
-
-% newmintedfile
-% Definiere neue Makros um automatisch Sourcecode aus Dateien zu highlighten.
-% \makroname{Dateipfad}
-\newmintedfile[inputawk]{awk}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
-\newmintedfile[inputjson]{json}{autogobble=true, breaklines=true, linenos=true}
-\newmintedfile[inputr]{r}{autogobble=true, breaklines=true, linenos=true}
-\newmintedfile[inputsql]{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
-
-% newmintinline
-% Definiere neues Makro um Sourcecoude einzeiler zu highlighten
-% \begin{awkcode} \end{awkcode}
-\newmintinline{awk}{awkcode}
-\newmintinline{json}{jsoncode}
-\newmintinline{r}{rcode}
-\newmintinline{sql}{sqlcode}
-
-% Packet:           tabularx
-% Beschreibung:     Werden Tabellen mit diesem Paket erstellt, ist es möglich Zeilenumbrüche in einer Zelle zu erzeugen
-\usepackage{tabularx}
-
-% Packet:           xcolor
-% Beschreibung:     Define own color schemas
+% Paket:            enumitem
+% Beschreibung:     Zeilenabstände bei Aufzählungen definieren
 % Option:
-\usepackage{xcolor}
+\usepackage{enumitem}
 
-% Definiere Farben
-\definecolor{blue}{HTML}{2E579F}
-\definecolor{green}{HTML}{1B8347}
-\definecolor{orange}{HTML}{FF7F00}
-\definecolor{red}{HTML}{D31C27}
-\definecolor{white}{HTML}{FFFFFF}
+% Paket:            eurosym
+% Beschreibung:     Bildet das Euro-Zeichen in unterschiedlichen Varianten ab
+% Option:
+\usepackage{eurosym}
+
+% Paket:            fancyhdr
+% Beschreibung:     Ermöglich ein generelles Seitenlayout ein zu stellen mit Kopf und Fußzeile.
+\usepackage{fancyhdr}
+
+% Paket:            float
+% Beschreibung:     Zum Ausrichten von Tabellen und Spalten bzw. deren Zentrierung
+% Option:
+% Restriktion:      Muss von Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
+\usepackage{float}
 
 % Packet:           framemethod
 % Beschreibung:
@@ -213,6 +67,150 @@
   frametitlefont=\sffamily\bfseries\color{white},
   frametitlebackgroundcolor=green,
 ]{example-popup}{Beispiel}
+
+% Paket:            geometry
+% Beschreibung:     A4 Seitenabstände
+% Option:
+\usepackage{geometry}
+\geometry{
+%  a4paper,           % Papierformat (wird auch über die Dokumentenklasse definiert)
+  top=2.7cm,          % Abstand Kopfseite   (Zwischen Kopfseite und Inhalt)
+  bottom=2cm,         % Abstand Fußseite    (Zwischen Fußseite und Inhalt)
+  left=2.5cm,         % Abstand Linkeseite  (Zwischen Linkerseite und Inhalt)
+  right=2cm,          % Abstand Rechteseite (Zwischen Recherseite und Inhalt)
+%  width=              %                    textwidth (+marginsep +marinparwidth)
+%  textwidth=15cm,     % Textbreite
+%  marginparsep=1cm,   % Randnotiztrennng
+%  marginparwidth=10cm,% Randnotizbreite
+%  height=             %                    textheight (+headheight +headsep + footskip)
+%  textheight=        % Texthöhe
+  headheight=1cm,     % Kopfhöhe
+  headsep=0.5cm,      % Kopftrennung        (Größe zwischen Kopfzeile und Inhalt)
+  footskip=1cm,       % Fußzeilenhöhe
+}
+
+% Paket:            glossaries
+% Beschreibung:
+% Option:
+\usepackage[toc,acronyms]{glossaries}
+\makeglossaries
+\include{glossar/glossar}
+
+
+% Paket:            graphicx
+% Beschreibung:     Einbinden von Bildern
+% Option:
+\usepackage{graphicx}
+
+% Packet:           Hyperref
+% Beschreibung:     Importiert hyperref um Querverweise mittels \hyperref zu erzeugen.
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={PDF-Title},
+  pdfauthor={Markus Pesch},
+  pdfsubject={PDF-Subject}
+}
+
+% Paket:            utf8
+% Beschreibung:     Stellt Umlaute richtig dar
+% Option:           inputenc - Erlaubt die Darstellung der gleichen Zeichen (Character) wie sie in stdin überliefert werden
+\usepackage[utf8]{inputenc}
+
+% Paket:            makeindex
+% Beschreibung:     Ermöglicht das Indexieren von Wörter und den Befehl \printindex um den Index auszugeben
+\usepackage{makeidx}
+\makeindex
+
+% Packet:           Minted
+% Beschreibung:     Dient zum highlining von Quellcode wie beispielsweise Java, Bash oder Python.
+% Option/en:
+%   autogobble:       Leerzeichen zwischen linken Rand und Sourcecode einrücken bzw. weg schneiden.
+%   breaklines:       Automatische Zeilenumbrüche
+%   cache:            de- oder aktiviert den cache um Sourcecode zwischen zu speichern und so das PDF schneller zu erzeugen
+%   cachedir:         Definiert den Pfad zum cache, an dem minted seine Daten zwischen speichern kann
+%   fontfamily:       Die Schriftart die benutzt werden soll. tt, courier und helvetica sind vordefiniert.
+%   fontsize:         Die Schriftgröße die benutzt werden soll. Beispielsweise fontsize=\footnotesize
+%   linenos:          Zeilennummern
+%   keywordcase:      Änderung der Buchstaben. Takes lower, upper, or capitalize.
+%   showspaces:       Blendet Leerzeichen ein
+\usepackage[cache=true, cachedir=/tmp/minted]{minted}
+
+% usemintedstyle
+% Gebe 'pygmentize -L styles' im Terminal ein um alle verfügbaren styles anzuzeigen.
+\usemintedstyle{tango}
+
+% newminted
+% Definiere neue aliase um einmalig ein highlighting pro Sprache zu deklarieren
+% \newminted{<makroname>}{optionen} ist verfügbar unter "<makroname>code"
+\newminted{awk}{autogobble=true, breaklines=true, linenos=true}
+\newminted{json}{autogobble=true, breaklines=true, linenos=true}
+\newminted{r}{autogobble=true, breaklines=true, linenos=true}
+\newminted{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
+\newminted{xml}{autogobble=true, breaklines=true, linenos=true}
+
+% newmintedfile
+% Definiere neue Makros um automatisch Sourcecode aus Dateien zu highlighten.
+% \makroname{Dateipfad}
+\newmintedfile[inputawk]{awk}{autogobble=true, breaklines=true, linenos=true}
+\newmintedfile[inputjson]{json}{autogobble=true, breaklines=true, linenos=true}
+\newmintedfile[inputr]{r}{autogobble=true, breaklines=true, linenos=true}
+\newmintedfile[inputsql]{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
+\newmintedfile{inputxml}{autogobble=true, breaklines=true, linenos=true}
+
+% newmintinline
+% Definiere neues Makro um Sourcecoude einzeiler zu highlighten
+% \begin{awkcode} \end{awkcode}
+\newmintinline{awk}{autogobble=true, breaklines=true, linenos=true}
+\newmintinline{json}{autogobble=true, breaklines=true, linenos=true}
+\newmintinline{r}{autogobble=true, breaklines=true, linenos=true}
+\newmintinline{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
+\newmintinline{xml}{autogobble=true, breaklines=true, linenos=true}
+
+% Paket:            multirow
+% Beschreibung:     Zum kombinieren mehrerer Zellen einer Tabelle
+% Option:
+\usepackage{multirow}
+
+% Paket:            natbib
+% Beschreibung:     Für Zitate
+% Option:           round - ?
+%\usepackage[round]{natbib}
+
+% Paket:            pdflscape
+% Beschreibung:     Ermöglicht Seiten horizontal darzustellen
+% Option:           \begin{landscape} \end{landscape}
+\usepackage{pdflscape}
+
+% Paket:            showframe
+% Beschreibung:     Blendet alle Frames (Textkörper, Fußzeile Kopzeile, Seitenrand) ein
+% Option:
+% \usepackage{showframe}
+
+% Packet:           tabularx
+% Beschreibung:     Werden Tabellen mit diesem Paket erstellt, ist es möglich Zeilenumbrüche in einer Zelle zu erzeugen
+\usepackage{tabularx}
+
+% Paket:            textpos
+% Beschreibung:     Zum erstellen von Textboxen
+% \begin{textblock*}{\textwidth}(0cm,0.5cm)
+\usepackage{textpos}
+
+% Paket:            verbatim
+% Beschreibung:     Bildet einen Quelltext exakt ab.
+% Options:
+\usepackage{verbatim}
+
+% Packet:           xcolor
+% Beschreibung:     Define own color schemas
+% Option:
+\usepackage{xcolor}
+
+% Definiere Farben
+\definecolor{blue}{HTML}{2E579F}
+\definecolor{green}{HTML}{1B8347}
+\definecolor{orange}{HTML}{FF7F00}
+\definecolor{red}{HTML}{D31C27}
+\definecolor{white}{HTML}{FFFFFF}
 
 % Start des Dokuments
 \begin{document}
