@@ -7,5 +7,5 @@ SELECT
   deptno,
   hiredate,
   sal,
-  RSUM(sal) OVER (PARTITION BY deptno ORDER BY hiredate) AS "sl"
+  SUM(sal) OVER (PARTITION BY deptno ORDER BY hiredate) AS "sl"
 FROM emp;
