@@ -26,6 +26,25 @@
 % Option:           ngerman
 \usepackage[ngerman]{babel}
 
+% Paket:            biblatex
+% Beschreibung:     Ermöglicht es, ein Literaturverzeichnis zu führen
+% Option:
+\usepackage[
+  style=authoryear-icomp,    % Zitierstil
+  isbn=false,                % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
+  pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
+  maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
+  maxcitenames=3,            % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
+  autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
+  block=space,               % kleiner horizontaler Platz zwischen den Feldern
+  backref=true,              % Seiten anzeigen, auf denen die Referenz vorkommt
+  backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
+  date=short,                % Datumsformatbackend=biber
+]{biblatex}
+\setlength{\bibitemsep}{1em}     % Abstand zwischen den Literaturangaben
+\setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
+\addbibresource{referenzen//bibliothek.bib}
+
 % Paket:            courier
 % Beschreibung:     Lädt das Paket courier für Schriftarten mit fester Breite.
 % Befehle:          \ttfamily     Aktiviert Courier füt Tabellen bzw. generelle begin-Blöcke
@@ -99,7 +118,7 @@
 % Option:
 \usepackage[toc,acronyms]{glossaries}
 \makeglossaries
-\include{glossar/glossar}
+\include{referenzen/glossar}
 
 
 % Paket:            graphicx
@@ -217,8 +236,16 @@
 \definecolor{red}{HTML}{D31C27}
 \definecolor{white}{HTML}{FFFFFF}
 
+% Packet:           csquotes
+% Beschreibung:     Muss nach babel, polyglossia, biblatex und inputec geladen werden
+% Option:
+\usepackage{csquotes}
+
 % Start des Dokuments
 \begin{document}
+
+  % Set Globally Table-Margin
+  \def\arraystretch{1.2}
 
   % Fetch Commit ID and Date
   \immediate\write18{./git-info.sh commit > git-id.tmp}
