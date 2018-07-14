@@ -45,6 +45,31 @@
 \setlength{\bibhang}{2em}        % Einzug nach jeweils erster Zeile
 \addbibresource{referenzen//bibliothek.bib}
 
+% Paket:            caption
+% Beschreibung:     Ermöglicht es, ein Literaturverzeichnis zu führen
+\usepackage{caption}
+
+% format=NAME           - Einstellung des grundsätzlichen Formats von Gleitobjektbeschriftungen
+% indention=EINZUG      - Einstellung des Einzugs der Beschriftung ab der zweiten Zeile
+% labelformat=NAME      - Einstellung der Zusammensetzung des Bezeichners (z. B. Label und Nummer) der Beschriftung
+% labelsep=NAME         - Einstellung des Trenners nach dem Bezeichner
+% justification=NAME    - Einstellung er Ausrichtung des Textes Beschriftung
+% singlelinecheck=BOOL  - Sonderbehandlung für einzeilige Beschriftungen ein- oder ausschalten
+% font=NAME             - Einstellung der Schrift der gesamten Beschriftung
+% labelfont=NAME        - Einstellung der Schrift des Bezeichners
+% textfont=NAME         - Einstellung der Schrift des Textes der Beschriftung
+% margin=BREITE         - Einstellung der Breite des Randes der Beschriftung
+% width=BREITE          - Einstellung der Breite der Beschriftung
+% parskip=ABSTAND       - Einstellung des Absatzabstandes der Beschriftung
+% hangindent=EINZUG     - Einstellung des Einzugs abgesehen von ersten Absatzzeilen
+% style=NAME            - Auswahl einer vordefinierten Gesamteinstellung
+% aboveskip=ABSTAND     - Einstellung des Abstandes vor einer Beschriftung
+% belowskip=ABSTAND     - Einstellung des Abstandes nach einer Beschriftung
+% position=WAHL         - Einstellung ob die Beschriftung als Über- oder Unterschrift formatiert werden soll
+% tableposition=WAHL    - Einstellung ob nur bei Tabellen die Beschriftung als Über- oder Unterschrift formatiert werden soll
+\captionsetup[figure]{position=bottom}
+\captionsetup[table]{position=bottom}
+
 % Paket:            courier
 % Beschreibung:     Lädt das Paket courier für Schriftarten mit fester Breite.
 % Befehle:          \ttfamily     Aktiviert Courier füt Tabellen bzw. generelle begin-Blöcke
@@ -133,6 +158,9 @@
   pdftitle={PDF-Title},
   pdfauthor={Markus Pesch},
   pdfsubject={PDF-Subject}
+  pdfkeywords={},
+  pdfcreator={pdflatex},
+  pdfproducer={LaTeX with hyperref}
 }
 
 % Paket:            utf8
@@ -224,6 +252,15 @@
 % Options:
 \usepackage{verbatim}
 
+% Paket:            warapfig
+% Beschreibung:     Ermöglich das floaten von Texten neben Bildern
+% Options:
+% \begin{wrapfigure}{R}{0.30\textwidth}
+%   \includegraphics[width=0.30\textwidth]{img/middleware.png}
+%   \caption{Middleware}
+% \end{wrapfigure}
+\usepackage{wrapfig}
+
 % Packet:           xcolor
 % Beschreibung:     Define own color schemas
 % Option:
@@ -291,9 +328,11 @@
 
   % Aufzählung aller Bilder
   % \listoffigures
-
+  % \newpage
+  
   % Aufzählung aller Tabellen
   % \listoftables
+  % \newpage
 
   % Glossary
   \printglossaries
