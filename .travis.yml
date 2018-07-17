@@ -1,21 +1,16 @@
-sudo: required
 language: latex
+
 services:
-- docker
+  - docker
+
 script:
-- make docker-latexmk
-#before_deploy:
-#- git config --local user.name "Markus Pesch"
-#- git config --local user.email "markus.pesch@cryptic.systems"
-#- git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-#deploy:
-#  provider: releases
-#  api_key:
-#    secure: T3rK7fLnLak/MBvHJQys2+3euP2KZvf++ItAmVGGiIs2MKJ+SJKCkT8ShQrjFmjNIcWkEkx4iBe4ovoCGzt5JZgoGWQwOwd/3p3S4lM7k6Jxj0kMlLxclPcAa1Rs1t6jIRZ7gyGQs1OBTDOXdb9ntBTcGprBz97Ta6oWM6BdDeOn6e7ZxeVzAqB3z9t7e0zGhUjTLDrafNuQVBYBIOkaVas2v+ON+EJcdXiEtcqQWcEJgW4M0BkQ0yHWs7LY5OkkF2ESkVL2UXgsKniEYY+423EM/z2IEYKobsFe1HkpeMUT6eTdWd7oquIHqrTDjGNjtr4rni+RlH1kPOT3j7ukboK4NxOCptqnE1sHhvg2EeZS2JfvRfg+GxH7y8qqKDhMuPQ/ea1opS/+zjjllHdr+qbrXV2RBPA5S8jCByNml6RZ0Qb4/6U8UcmTzib8Cx+ZIgGj5m73oDNdCOWFbN0hLqnenRAmEMJC/HRV8jjF+R+OK8YEIh94KqUZKrzcTSKVG3d402MOLFC+oz9d+O2bLy4zOGMkpMis4gSAQC6ezVd9DOSk0JFJBjnyir6t19cXYBiKM1ulpdxsp1XgLDESR9HfaG7DXo4kystJlhMta+OTDlwkmSvGPsBZPI4klAs3hV0jily2Llpa8gKiSnmswoojCOG9jDlABJvSwiHkeoE=
-#  file: index.pdf
-#  on:
-#    repo: volker-raschek/tdwh_ss18
-#    condition:
-#env:
-#  global:
-#    secure: sjT2d6QeNIQd5Hjr8yy0CIguzcNUePcxLO+siM4163zIrfoPasDBDThvHn1eicKhzo6wVSKMavbb6zDJw5HR1jEXsC4WZyD1HsHzS0zrtY7qyrFenYNO+0bfzhUwSVekAnLC/F5wSV5/qTOT7/JszkFtDsvqmwSTXqIAQM0z94WzM8fbBt0ovboYOvHJ0Pp9oOrNs6J3Pp8rsgqAklhPgHW8ERlbh5LNOzdLMyo1rVwuePqwOh5dyjWbTvWzsAatnEAkerf9Ld78UuEXiOcEFdT5O7WkmtgQtpzu9s1AbX64ZD8H8UFGdJEzcVIryBReD7K+hwhHD/wnhSmyqNbIZrCiCWEo2saOOcc/6nSKbBp77bv+okZVS5W7iIof32Z4lAQcohnc0ioJQOdIc6CUOulJretLF5+I+G00EbakYz2Y73izCbhcDlwlf8aa6vsvctnnQ/PovUK2ZguzjHR1nn0muCG/4kmQWjnlsCzD2ZCrP6esIvL8PA3sCsG0oxCJpiuzsaxVBkXWHV5ZiYBP5MgycflAVgJeHTZn8ndUeg9tkAyCpMgmBdTIubRCy7VWlLz4RC6x6jEryuAMQDi48SuhGAmPtlKhpk8nJTQXGD2ckf1lXYJbm2WPQqAhhCLRUboWO+kPgkJH7Yilxe2S2kA8FDP0oZVvmhaon2IieAU=
+  - make docker-latexmk
+
+deploy:
+  provider: releases
+  api_key:
+    secure: imhEDT0Q+ncEyovS5ENEl4D6Dki1IAESzzpYYOFEe3YtdBzslPUnldgyUcdyN+uhLL41cdNfmUXz8vd186nqSl65O/caGTACxQOzwwfVk3TFFhU426XX1thsGo4kD4n2bFweyxhUTzM60VxUDF4+9On0tl7sNl64rBGtHEU3Mf5kNLdNblez1OnIF9f30pdIdaATWwfaI7xQw00zBNHuKYvlJ0trturLeuTQR4k4aADkm//O02kKiKCnwtV67V7GCEzJez8XRaiPZVHZA8wBD6/8NLUm4+DonLFAVjOEzg70qdD79+5PoqwDriDh0DwdwQ9fSymEDaP7r8hnZrTv+y+8nqoYDoAfsASTiTwzNE9SPFj+DCAALMMGzJkQMjSN/sbHYMtYkvp03ZXiUqxNeimA2KQZ7/GgHW8D9n/aMJ3UkwShYmgg3f3G0JWL81X9tsn9fgTqEdF3wR4FtkUNnXsmKYrBjNpOcQKOnRq9J1v0Oq3J+8zYiE4C+o1cF/BG1au99YgEva2ZVIvJxRKwjq4H76S2vPyXbwLZjxGTnRcLuYCXYuqG1f05PTF8TbSpQeOhQZHQqNHbcfXpeEnQTTqaGXAqLyK2VAyNzyjeII9hKoMPEoxNBgkd1IM3Bs7adWxbizuTcxU1CFZxncxk7kzmjxG/KCd0cG0B+5VeH8g=
+  file: index.pdf
+  on:
+    tags: true
+  skip_cleanup: true
