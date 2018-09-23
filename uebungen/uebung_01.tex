@@ -11,18 +11,14 @@ Starten Sie das Skript.
 \subsubsection*{Lösung}
 \label{sec:uebung_01.aufgabe_01.loesung}
 
-\subsubsection*{Minted}
 
-
+% ##########################################################################
+% ################################# Minted #################################
+% ##########################################################################
 \section{Minted}
 
+% ############################### Begin-Block ##############################
 \subsection{Begin-Block}
-
-\subsubsection{SQL-Code}
-\begin{sqlcode}
-  SELECT *
-  FROM tab;
-\end{sqlcode}
 
 \subsubsection{AWK-Code}
 \begin{awkcode}
@@ -31,38 +27,110 @@ Starten Sie das Skript.
   }
 \end{awkcode}
 
+\subsubsection{JSON}
+\begin{jsoncode}
+  {
+    "name": "Molecule Man",
+    "age": 29,
+    "secretIdentity": "Dan Jukes",
+    "powers": [
+      "Radiation resistance",
+      "Turning tiny",
+      "Radiation blast"
+    ]
+  }
+\end{jsoncode}
 
-\subsection{Inputfile}
+\subsubsection{R-Code}
+\begin{rcode}
+  print(match(5, c(2,7,5,3))) #  5 is in 3rd place
+  print(seq(from=1,to=3,by=.5) %in% 1:3)
+\end{rcode}
 
 \subsubsection{SQL-Code}
-\inputsql{sql/test.sql}
+\begin{sqlcode}
+  SELECT *
+  FROM tab;
+\end{sqlcode}
 
+\subsubsection{XML}
+\begin{xmlcode}
+  <?xml version="1.0" encoding="UTF-8"?>
+  <note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+  </note>
+\end{xmlcode}
+
+% ################################ Input-File ###############################
+\subsection{Inputfile}
+
+\subsubsection{AWK-Code}
+\inputsql{examples/test.awk}
+
+\subsubsection{JSON}
+\inputsql{examples/test.json}
+
+\subsubsection{R-Code}
+\inputsql{examples/test.r}
+
+\subsubsection{SQL-Code}
+\inputsql{examples/test.sql}
+
+\subsubsection{XML}
+\inputsql{examples/test.xml}
+
+% ################################## Inline #################################
 \subsection{Inline}
+
 \subsubsection{SQL-Code}
 \sqlinline{SELECT * FROM tab;}
 
+
+% ##########################################################################
+% ################################ Info-Boxen ##############################
+% ##########################################################################
 \section{Info-Boxen}
+
+% ################################### WARN #################################
 \begin{warn-popup}
   Warn-Popup
 \end{warn-popup}
 
+% ################################### INFO #################################
 \begin{info-popup}
   Info-Popup
 \end{info-popup}
 
+% ################################# Example ################################
 \begin{example-popup}
   Example-Popup
 \end{example-popup}
 
 
+% ##########################################################################
+% ################################# Akronyme ###############################
+% ##########################################################################
 \section{Akronyme}
 \acrfull{acr:sql}
+\acrlong{acr:sql}
+\acrshort{acr:sql}
 
+
+% ##########################################################################
+% ################################ Text-Boxen ##############################
+% ##########################################################################
 \section{Text-Boxen}
 \begin{textblock*}{\textwidth}(4cm,0cm)
   Ich bin eine Textbox
 \end{textblock*}
 
+
+% ##########################################################################
+% ############################### Aufzählungen #############################
+% ##########################################################################
 \section{Aufzählungen}
 \begin{itemize}[itemsep=0pt]
   \item Item
@@ -81,3 +149,48 @@ Starten Sie das Skript.
   \item[B)] Item
   \item[C)] Item
 \end{itemize}
+
+% ##########################################################################
+% ################################# Tabellen ###############################
+% ##########################################################################
+\section{Tabellen}
+
+\begin{table}[H]
+  \begin{tabularx}{\textwidth}{X|X|X|X}
+    \textbf{FIRSTNAME} & \textbf{LASTNAME} & \textbf{BIRTHDAY} & \textbf{HIREDATE} \\
+    \hline\hline
+    Maximilian & Arbeitsscheu & 1998-06-21 & 2007-04-18 \\
+    Henry & Großkreutz & 1990-09-01 & 2009-02-10 \\
+    Leni & Mayer & 1996-10-15 & 2009-02-10 \\
+    $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ \\
+  \end{tabularx}
+  \caption{beispiel\_01}
+  \label{tbl:beispiel_01}
+\end{table}
+
+\begin{table}[H]
+  \begin{tabularx}{\textwidth}{X|X|X|X}
+    \textbf{FIRSTNAME} & \textbf{LASTNAME} & \textbf{BIRTHDAY} & \textbf{HIREDATE} \\
+    \hline\hline
+    \multicolumn{2}{c|}{\textbf{Multi-column}} & 1998-06-21 & 2007-04-18 \\
+    Henry & Großkreutz & \multicolumn{2}{c}{\textbf{Multi-column}} \\
+    \multicolumn{3}{c|}{\textbf{Multi-column}} & 2009-02-10 \\
+    $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ \\
+  \end{tabularx}
+  \caption{beispiel\_02}
+  \label{tbl:beispiel_02}
+\end{table}
+
+\begin{table}[H]
+  \begin{tabularx}{\textwidth}{X|X|X|X}
+    \textbf{FIRSTNAME} & \textbf{LASTNAME} & \textbf{BIRTHDAY} & \textbf{HIREDATE} \\
+    \hline\hline
+    \multirow{2}{*}{\textbf{Multi-row}} & Arbeitsscheu & 1998-06-21 & 2007-04-18 \\
+    & Großkreutz & 1990-09-01 & 2009-02-10 \\
+    Leni & Mayer & 1996-10-15 & \multirow{2}{*}{\textbf{Multi-row}} \\
+    $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ & \\
+    \hline
+  \end{tabularx}
+  \caption{beispiel\_03}
+  \label{tbl:beispiel_03}
+\end{table}
