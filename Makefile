@@ -1,5 +1,3 @@
-VERSION := $(or ${VERSION},${VERSION},"")
-
 # Docker Image
 IMAGE := volkerraschek/docker-latex:latest
 

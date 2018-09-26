@@ -3,7 +3,7 @@
 if [ $1 == "date" ]; then
   git log -1 --pretty=format:"%ad" --date=short
 elif [ $1 == "commit" ]; then
-  if [ -z ${VERSION+x} ]; then
+  if [[ -z ${VERSION+x} || ${#VERSION} -le 0 ]]; then
     git rev-parse --short HEAD
   else
     echo ${VERSION}
