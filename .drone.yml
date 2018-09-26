@@ -1,0 +1,30 @@
+clone:
+  git:
+    image: plugins/git
+    depth: 50
+    tags: true
+
+pipeline:
+  generate_pdf:
+    image: volkerraschek/docker-latex:latest
+    pull: true
+    commands:
+      - make VERSION=${DRONE_TAG}
+
+
+  gitea_release:
+    image: plugins/gitea-release
+    pull: true
+    base_url: https://git.cryptic.systems
+    secrets: [ gitea_token ]
+    files:
+      - index.pdf
+    checksum:
+      - md5
+      - sha1
+      - sha256
+      - sha512
+      - adler32
+      - crc32
+    when:
+      event: tag

@@ -1,3 +1,5 @@
+VERSION := $(or ${VERSION},${VERSION},"")
+
 # Docker Image
 IMAGE := volkerraschek/docker-latex:latest
 
@@ -36,6 +38,7 @@ docker-latexmk:
 		--rm \
 		--user="$(shell id -u):$(shell id -g)" \
 		--net="none" \
+		--env VERSION=${VERSION} \
 		--volume="${PWD}:/data" ${IMAGE} \
 		make latexmk
 
@@ -44,6 +47,7 @@ docker-pdflatex:
 		--rm \
 		--user="$(shell id -u):$(shell id -g)" \
 		--net="none" \
+		--env VERSION=${VERSION} \
 		--volume="${PWD}:/data" ${IMAGE} \
 		make pdflatex
 
