@@ -10,7 +10,8 @@ pipeline:
     pull: true
     commands:
       - make VERSION=${DRONE_TAG}
-
+    when:
+      event: [ push, pull_request, tag ]
 
   gitea_release:
     image: plugins/gitea-release
