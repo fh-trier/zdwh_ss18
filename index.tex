@@ -143,14 +143,6 @@
   footskip=1cm,       % Fußzeilenhöhe
 }
 
-% Paket:            glossaries
-% Beschreibung:
-% Option:
-\usepackage[toc,acronyms]{glossaries}
-\makeglossaries
-\include{referenzen/glossar}
-
-
 % Paket:            graphicx
 % Beschreibung:     Einbinden von Bildern
 % Option:
@@ -167,6 +159,20 @@
   pdfcreator={pdflatex},
   pdfproducer={LaTeX with hyperref}
 }
+
+% Paket:            glossaries
+% Beschreibung:     Das Paket glossaries muss nach dem Paket hyperref geladen werden
+% Dokumentation:    http://ftp.gwdg.de/pub/ctan/macros/latex/contrib/glossaries/glossaries-user.pdf
+% Option/en:
+%   acronyms        - This is equivalent to acronym=true and may be used in the document class option list.
+%   section         - This is a key=value option. Its value should be the name of a sectional unit (e.g. chapter).
+%                     This will make the glossaries appear in the named sectional unit, otherwise each glossary will
+%                     appear in a chapter, if chapters exist, otherwise in a section. Unnumbered sectional units will
+%                     be used by default.
+%   toc             - Add the glossaries to the table of contents.
+\usepackage[toc,acronyms]{glossaries}
+\makeglossaries
+\include{referenzen/glossar}
 
 % Paket:            utf8
 % Beschreibung:     Stellt Umlaute richtig dar
@@ -251,6 +257,12 @@
 % Beschreibung:     Zum erstellen von Textboxen
 % \begin{textblock*}{\textwidth}(0cm,0.5cm)
 \usepackage{textpos}
+
+% Paket:            tikz
+% Beschreibung:     TikZ and PGF are TeX packages for creating graphics programmatically.
+% Dokumentation:
+\usepackage{tikz}
+\usetikzlibrary{intersections}
 
 % Paket:            verbatim
 % Beschreibung:     Bildet einen Quelltext exakt ab.
