@@ -150,8 +150,17 @@
 
 % Packet:           Hyperref
 % Beschreibung:     Importiert hyperref um Querverweise mittels \hyperref zu erzeugen.
+% Dokumentation:    https://www.namsu.de/Extra/pakete/Hyperref.html
 \usepackage{hyperref}
 \hypersetup{
+  colorlinks=false,                 % hyperlinks are coloured
+  citecolor=green,                  % color for cite links, only visible if colorlinks=true
+  linkcolor=red,                    % color for page links, only visible if colorlinks=true
+  urlcolor=orange,                  % color for url links, only visible if colorlinks=true
+  citebordercolor=green,            % color for citeborder, only visible if colorlinks=true
+  urlbordercolor=orange,            % color for url links, only visible if colorlinks=true
+  linkbordercolor=red,              % color for page links, only visible if colorlinks=true
+  pdfborderstyle={/S/U/W 1},        % border style will be underline of width 1pt
   pdftitle={PDF-Title},
   pdfauthor={Markus Pesch},
   pdfsubject={PDF-Subject},
@@ -196,7 +205,7 @@
 %   linenos:          Zeilennummern
 %   keywordcase:      Änderung der Buchstaben. Takes lower, upper, or capitalize.
 %   showspaces:       Blendet Leerzeichen ein
-\usepackage[cache=true, cachedir=/tmp/minted]{minted}
+\usepackage[cache=true]{minted}
 
 % usemintedstyle
 % Gebe 'pygmentize -L styles' im Terminal ein um alle verfügbaren styles anzuzeigen.
@@ -207,6 +216,7 @@
 % \newminted{<makroname>}{optionen} ist verfügbar unter "<makroname>code"
 \newminted{awk}{autogobble=true, breaklines=true, linenos=true}
 \newminted{json}{autogobble=true, breaklines=true, linenos=true}
+\newminted{julia}{autogobble=true, breaklines=true, linenos=true}
 \newminted{r}{autogobble=true, breaklines=true, linenos=true}
 \newminted{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 \newminted{xml}{autogobble=true, breaklines=true, linenos=true}
@@ -216,6 +226,7 @@
 % \makroname{Dateipfad}
 \newmintedfile[inputawk]{awk}{autogobble=true, breaklines=true, linenos=true}
 \newmintedfile[inputjson]{json}{autogobble=true, breaklines=true, linenos=true}
+\newmintedfile[inputjulia]{julia}{autogobble=true, breaklines=true, linenos=true}
 \newmintedfile[inputr]{r}{autogobble=true, breaklines=true, linenos=true}
 \newmintedfile[inputsql]{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 \newmintedfile{inputxml}{autogobble=true, breaklines=true, linenos=true}
@@ -225,6 +236,7 @@
 % \begin{awkcode} \end{awkcode}
 \newmintinline{awk}{autogobble=true, breaklines=true, linenos=true}
 \newmintinline{json}{autogobble=true, breaklines=true, linenos=true}
+\newmintinline{julia}{autogobble=true, breaklines=true, linenos=true}
 \newmintinline{r}{autogobble=true, breaklines=true, linenos=true}
 \newmintinline{sql}{autogobble=true, breaklines=true, linenos=true, keywordcase=upper}
 \newmintinline{xml}{autogobble=true, breaklines=true, linenos=true}
@@ -354,4 +366,6 @@
   % Glossary
   % \printglossaries
 
+  % Literatur
+  % \printbibliography
 \end{document}
