@@ -7,7 +7,7 @@ TEX_NAME := ${FILE}.tex
 PDF_NAME := ${FILE}.pdf
 
 # Hardlink-Path and Hardlink-File
-HARDLINK_PATH := ${HOME}/pdf
+HARDLINK_PATH := ${FSD}/latex-pdf
 HARDLINK_FILE := tmp.pdf
 
 latexmk:
