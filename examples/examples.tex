@@ -155,6 +155,7 @@ Starten Sie das Skript.
 % ##########################################################################
 \section{Tabellen}
 
+% ################################# tabularx ###############################
 \begin{table}[H]
   \begin{tabularx}{\textwidth}{X|X|X|X}
     \textbf{FIRSTNAME} & \textbf{LASTNAME} & \textbf{BIRTHDAY} & \textbf{HIREDATE} \\
@@ -164,10 +165,11 @@ Starten Sie das Skript.
     Leni & Mayer & 1996-10-15 & 2009-02-10 \\
     $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ \\
   \end{tabularx}
-  \caption{beispiel\_01}
+  \caption{tabularx - beispiel\_01}
   \label{tbl:beispiel_01}
 \end{table}
 
+% ########################## tabularx - multicolumn ########################
 \begin{table}[H]
   \begin{tabularx}{\textwidth}{X|X|X|X}
     \textbf{FIRSTNAME} & \textbf{LASTNAME} & \textbf{BIRTHDAY} & \textbf{HIREDATE} \\
@@ -177,10 +179,12 @@ Starten Sie das Skript.
     \multicolumn{3}{c|}{\textbf{Multi-column}} & 2009-02-10 \\
     $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ \\
   \end{tabularx}
-  \caption{beispiel\_02}
+  \caption{tabularx - beispiel\_02}
   \label{tbl:beispiel_02}
 \end{table}
 
+
+% ############################ tabularx - multirow #########################
 \begin{table}[H]
   \ttfamily
   \begin{tabularx}{\textwidth}{X|X|X|X}
@@ -192,6 +196,22 @@ Starten Sie das Skript.
     $[$\dots$]$ & $[$\dots$]$ & $[$\dots$]$ & \\
     \hline
   \end{tabularx}
-  \caption{beispiel\_03}
+  \caption{tabularx - beispiel\_03}
   \label{tbl:beispiel_03}
+\end{table}
+
+
+% ################################## tabular ###############################
+\begin{table}[H]
+  \ttfamily
+  \begin{tabular}{l|l|l|l}
+    \cellcolor{light-grey} \textbf{FIRSTNAME} & \textbf{LASTNAME} & \textbf{BIRTHDAY} & \cellcolor{grey} \textbf{HIREDATE} \\
+    \hline\hline
+    Maximilian & Arbeitsscheu & \cellcolor{orange}1998-06-21 & 2007-04-18 \\
+    Henry & \cellcolor{red} Großkreutz & 1990-09-01 & 2009-02-10 \\
+    \cellcolor{green} Leni & Mayer & 1996-10-15 & \cellcolor{blue} 2009-02-10 \\
+    $[$\dots$]$ & \cellcolor{yellow} $[$\dots$]$ & \cellcolor{brown} $[$\dots$]$ & $[$\dots$]$ \\
+  \end{tabular}
+  \caption{tabular - beispiel\_04}
+  \label{tbl:beispiel_04}
 \end{table}
