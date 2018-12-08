@@ -30,14 +30,15 @@
 % Beschreibung:     Ermöglicht es, ein Literaturverzeichnis zu führen
 % Option:
 \usepackage[
-  style=authoryear-icomp,    % Zitierstil
+  style=authoryear-icomp,    % Zitierstil (https://de.overleaf.com/learn/latex/Biblatex_bibliography_styles)
   isbn=false,                % ISBN nicht anzeigen, gleiches geht mit nahezu allen anderen Feldern
   pagetracker=true,          % ebd. bei wiederholten Angaben (false=ausgeschaltet, page=Seite, spread=Doppelseite, true=automatisch)
-  maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden (ich wollte alle)
+  maxbibnames=50,            % maximale Namen, die im Literaturverzeichnis angezeigt werden
   maxcitenames=3,            % maximale Namen, die im Text angezeigt werden, ab 4 wird u.a. nach den ersten Autor angezeigt
   autocite=inline,           % regelt Aussehen für \autocite (inline=\parancite)
   block=space,               % kleiner horizontaler Platz zwischen den Feldern
   backref=true,              % Seiten anzeigen, auf denen die Referenz vorkommt
+  backend=biber,
   backrefstyle=three+,       % fasst Seiten zusammen, z.B. S. 2f, 6ff, 7-10
   date=short,                % Datumsformatbackend=biber
 ]{biblatex}
@@ -127,6 +128,12 @@
   frametitlefont=\sffamily\bfseries\color{white},
   frametitlebackgroundcolor=green,
 ]{example-popup}{Beispiel}
+
+% Paket:            footmisc
+% Beschreibung:     Das footmisc Paket liefert viele Möglichkeiten, wie Fußnoten in Dokumenten dargestellt werden können.
+% Option:
+% Dokumentation:    http://mirror.utexas.edu/ctan/info/translations/footmisc/de/footmiscDE.pdf
+\usepackage[bottom]{footmisc}
 
 % Paket:            geometry
 % Beschreibung:     A4 Seitenabstände
@@ -376,6 +383,7 @@
 
   % Glossary
   % \printglossaries
+  % \newpage
 
   % Literatur
   % \printbibliography
