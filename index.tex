@@ -82,6 +82,15 @@
 \captionsetup[figure]{position=bottom}
 \captionsetup[table]{position=bottom}
 
+% Paket:            booktabs
+% Beschreibung:     Das Hauptaugenmerk von booktabs liegt dabei auf der Gestaltung der horizontalen Linien innerhalb einer Tabelle.
+%                   Was unter anderem daran liegt, dass der Autor des Paketes Simon Fear mehrere Regeln bzw. Empfehlungen für die
+%                   Erstellung/Gestaltung einer Tabelle gibt. Aufgrund der ersten zwei Regeln:
+%                   1) Verwende nie und nimmer vertikale Linien.
+%                   2) Verwende keine doppelten Linien.
+% Dokumentation:    https://www.namsu.de/Extra/pakete/Booktabs.html
+\usepackage{booktabs}
+
 % Paket:            courier
 % Beschreibung:     Lädt das Paket courier für Schriftarten mit fester Breite.
 % Befehle:          \ttfamily     Aktiviert Courier füt Tabellen bzw. generelle begin-Blöcke
@@ -201,6 +210,11 @@
 % Option:           inputenc - Erlaubt die Darstellung der gleichen Zeichen (Character) wie sie in stdin überliefert werden
 \usepackage[utf8]{inputenc}
 
+% Paket:            lipsum
+% Beschreibung:
+% Option:
+\usepackage{lipsum}
+
 % Paket:            makeindex
 % Beschreibung:     Ermöglicht das Indexieren von Wörter und den Befehl \printindex um den Index auszugeben
 \usepackage{makeidx}
@@ -288,6 +302,14 @@
 % Dokumentation:
 \usepackage{tikz}
 \usetikzlibrary{intersections}
+
+% Packet:           varwidth
+% Beschreibung:     The package defines a varwidth environment (based on minipage) which is an analogue
+%                   of minipage, but whose resulting width is the natural width of its contents.
+% Dokumentation:    http://ctan.math.washington.edu/tex-archive/macros/latex/contrib/varwidth/varwidth-doc.pdf
+%                   https://www.namsu.de/Extra/befehle/Minipage.html
+% Option:
+\usepackage{varwidth}
 
 % Paket:            verbatim
 % Beschreibung:     Bildet einen Quelltext exakt ab.

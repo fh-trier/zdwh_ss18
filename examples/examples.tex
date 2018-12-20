@@ -150,6 +150,19 @@ Starten Sie das Skript.
   \item[C)] Item
 \end{itemize}
 
+\begin{description}[itemsep=0pt]
+  \item[Itempoint 1] \mbox{} \\
+  \lipsum[1]
+  \bigskip
+
+  \item[Itempoint 2] \mbox{} \\
+  \lipsum[1]
+  \bigskip
+
+  \item[Itempoint 3] \mbox{} \\
+  \lipsum[1]
+\end{description}
+
 % ##########################################################################
 % ################################# Tabellen ###############################
 % ##########################################################################
@@ -214,4 +227,20 @@ Starten Sie das Skript.
   \end{tabular}
   \caption{tabular - beispiel\_04}
   \label{tbl:beispiel_04}
+\end{table}
+
+
+% ################################## tabular 2 ###############################
+\begin{table}[H]
+  \begin{tabular}{llll}
+    \toprule[2pt]
+    \cellcolor{light-grey} \textbf{FIRSTNAME} & \textbf{LASTNAME} & \textbf{BIRTHDAY} & \cellcolor{grey} \textbf{HIREDATE} \\ \midrule[1.5pt]
+    Maximilian & Arbeitsscheu & \cellcolor{orange}1998-06-21 & 2007-04-18 \\ \midrule
+    Henry & \cellcolor{red} Großkreutz & 1990-09-01 & 2009-02-10 \\ \midrule
+    \cellcolor{green} Leni & Mayer & 1996-10-15 & \cellcolor{blue} 2009-02-10 \\ \midrule
+    $[$\dots$]$ & \cellcolor{yellow} $[$\dots$]$ & \cellcolor{brown} $[$\dots$]$ & $[$\dots$]$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{tabular - beispiel\_05}
+  \label{tbl:beispiel_05}
 \end{table}
