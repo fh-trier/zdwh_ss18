@@ -3,13 +3,31 @@
 % Option:           extraarticle - ?
 \documentclass[12pt]{article}
 
+% Packet:           xcolor
+% Beschreibung:     Define own color schemas
+% Option:
+% Restriktion:      Muss vor Paket hyperref geladen werden. Ansonsten werden die Farben der Links nicht genutzt.
+\usepackage{xcolor}
+
+% Definiere Farben
+\definecolor{blue}{HTML}{5E7FB8}
+\definecolor{brown}{HTML}{BA9D5E}
+\definecolor{green}{HTML}{79B960}
+\definecolor{grey}{HTML}{7C7C7C}
+\definecolor{light-grey}{HTML}{D5D5D5}
+\definecolor{orange}{HTML}{FF7F00}
+\definecolor{red}{HTML}{B80A0A}
+\definecolor{violet}{HTML}{B688CB}
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{yellow}{HTML}{E2E66C}
+
 % Paket:            setspace
 % Beschreibung:     Setz über die optionen den Zeilenabstand
 % Optionen:         Möglicher Zeilenabstand
 %                   singlespacing = 1,0
 %                   onehalfspacing = 1,5
 %                   doublespacing = 2,0
-% Restriktion:      Muss von Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
+% Restriktion:      Muss vor Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
 \usepackage[onehalfspacing]{setspace}
 
 % Paket:            appendix
@@ -324,23 +342,6 @@
 %   \caption{Middleware}
 % \end{wrapfigure}
 \usepackage{wrapfig}
-
-% Packet:           xcolor
-% Beschreibung:     Define own color schemas
-% Option:
-\usepackage{xcolor}
-
-% Definiere Farben
-\definecolor{blue}{HTML}{5E7FB8}
-\definecolor{brown}{HTML}{BA9D5E}
-\definecolor{green}{HTML}{79B960}
-\definecolor{grey}{HTML}{7C7C7C}
-\definecolor{light-grey}{HTML}{D5D5D5}
-\definecolor{orange}{HTML}{FF7F00}
-\definecolor{red}{HTML}{DE6144}
-\definecolor{violet}{HTML}{B688CB}
-\definecolor{white}{HTML}{FFFFFF}
-\definecolor{yellow}{HTML}{E2E66C}
 
 % Packet:           csquotes
 % Beschreibung:     Muss nach babel, polyglossia, biblatex und inputec geladen werden
