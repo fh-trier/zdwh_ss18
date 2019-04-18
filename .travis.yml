@@ -1,14 +1,14 @@
-language: latex
 services:
   - docker
+
 script:
   - make docker-latexmk VERSION=$TRAVIS_TAG
-# deploy:
-#   provider: releases
-#   api_key:
-#     secure: OkTs68CmiCQWLGdZehzinnsEU6ksX0EcYTeIcwoTL0FAasKd4eqwt0/vxO0TszWUNtjCHwgNGFd4BEja825tQ5wlRrq1MBlIPMuhwq25lTrgUWj8V+vGghc84D6zi6IODfhf7qptqWA1O8+W3T+sSwLLZ7Ttog/IJtARHRn4qNTeTPKQLwcNsDcTiEnyUXVz9OyJ1za8h+4l1j3mBw4tDxg8uW+v5JlpUTQTWCNg2HwYCGgrSrhcFjVcbOK6HX2vIAbmxj/iJfVcb1KqrN1f8+1F5Ss2VSxeHr0rTxdaZSx2ZlLN6Nivr8jKj8hg1UshQAnG9mUFPSkJW/elk3ybkZiW1O4h5VGhG92ZZZPQRmrYKgtAZN2KsfB7DuSvmrvUmDKyK16HnvI5Kih0nFK0jz0jlMV0nZ3P8tAj1lxlcxPFZ3sWk89rWzmXyH3r7Uz2BjMybYoMDUUqwoJnzRIA6/tZIw2/RIVSqVqBHwbdf9qtkZY9OqVciffkiT/aRhGf2id8By7w60iix1mpIy74j8Fkh4G/PpQy2XIvGNpWrzahGGc7AkJp5LzT/uQ94L/evOc1vYeQ0HZDGceif3B4KC/jqWkI4AwkCUJStT+vdy2KXqc1VDYOK3+0Ds9ga3VVVbxMjijuf1R48t71ZyK1Fm92P7xaVcjrLNk0gQmiC94=
-#   file: index.pdf
-#   on:
-#     repo: fh-trier/tgdb_ws1819
-#     tags: true
-#   skip_cleanup: true
+
+deploy:
+  provider: releases
+  api_key:
+    secure: OkTs68CmiCQWLGdZehzinnsEU6ksX0EcYTeIcwoTL0FAasKd4eqwt0/vxO0TszWUNtjCHwgNGFd4BEja825tQ5wlRrq1MBlIPMuhwq25lTrgUWj8V+vGghc84D6zi6IODfhf7qptqWA1O8+W3T+sSwLLZ7Ttog/IJtARHRn4qNTeTPKQLwcNsDcTiEnyUXVz9OyJ1za8h+4l1j3mBw4tDxg8uW+v5JlpUTQTWCNg2HwYCGgrSrhcFjVcbOK6HX2vIAbmxj/iJfVcb1KqrN1f8+1F5Ss2VSxeHr0rTxdaZSx2ZlLN6Nivr8jKj8hg1UshQAnG9mUFPSkJW/elk3ybkZiW1O4h5VGhG92ZZZPQRmrYKgtAZN2KsfB7DuSvmrvUmDKyK16HnvI5Kih0nFK0jz0jlMV0nZ3P8tAj1lxlcxPFZ3sWk89rWzmXyH3r7Uz2BjMybYoMDUUqwoJnzRIA6/tZIw2/RIVSqVqBHwbdf9qtkZY9OqVciffkiT/aRhGf2id8By7w60iix1mpIy74j8Fkh4G/PpQy2XIvGNpWrzahGGc7AkJp5LzT/uQ94L/evOc1vYeQ0HZDGceif3B4KC/jqWkI4AwkCUJStT+vdy2KXqc1VDYOK3+0Ds9ga3VVVbxMjijuf1R48t71ZyK1Fm92P7xaVcjrLNk0gQmiC94=
+  file: index.pdf
+  on:
+    tags: true
+  skip_cleanup: true
