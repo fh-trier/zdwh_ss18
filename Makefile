@@ -1,5 +1,5 @@
 # Docker Image
-IMAGE := volkerraschek/docker-latex:latest
+IMAGE := volkerraschek/docker-latex:latest-ubuntu18.04
 
 # Input tex-file and output pdf-file
 FILE := index
