@@ -1,4 +1,4 @@
-# Latex-Templates [![Build Status](https://travis-ci.com/fh-trier/latex-templates.svg?branch=thesis)](https://travis-ci.com/fh-trier/latex-templates)
+# Latex-Templates [![Build Status](https://travis-ci.com/fh-trier/latex-templates.svg?branch=master)](https://travis-ci.com/fh-trier/latex-templates)
 
 ## Containing templates
 Currently containing templates, seperated by git branches:
@@ -19,7 +19,7 @@ $ git checkout master
 
 Now you can edit the template using an editor. Editors such as Texstudio or Visual Studio Code with Plugin are available.
 
-## Compilling the PDF document
+## Compiling the PDF document
 There are two ways to compile the PDF document. Since the templates contain all dependencies to the package `minted`, it is probably easier to use a docker container to compile the document.
 
 To do this, install docker and Make. If you have docker and Make installed run `make docker-latexmk` to compile the PDF document.
