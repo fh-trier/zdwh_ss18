@@ -2,7 +2,7 @@ services:
   - docker
 
 script:
-  - make docker-latexmk VERSION=$TRAVIS_TAG
+  - make docker-latexmk
 
 deploy:
   provider: releases
