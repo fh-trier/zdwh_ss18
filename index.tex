@@ -30,6 +30,9 @@
 % Restriktion:      Muss vor Paket hyperref geladen werden. Ansonsten funktioniert das Paket nicht.
 \usepackage[onehalfspacing]{setspace}
 
+
+% ###########################################################################################################################
+
 % Paket:            appendix
 % Beschreibung:     Das Paket dient dazu, ausschließlich das Thema einer Überschrift in das Inhaltsverzeichnis zu überführen
 % Option:           appendix - Überführt die Überschriften des Anhangs richtig ins das Inhaltsverzeichnis
@@ -74,32 +77,6 @@
 % Dokumentation:    http://texdoc.net/texmf-dist/doc/latex/colortbl/colortbl.pdf
 \usepackage{colortbl}
 
-% Paket:            subcaption
-% Beschreibung:     Bietet eine große Auswahl an Gestaltungsmöglichkeiten bezüglich der Beschriftung von Bildern und Tabellen
-%                   die neben oder unter untereinander dargestellt werden sollen.
-\usepackage{subcaption}
-
-% format=NAME           - Einstellung des grundsätzlichen Formats von Gleitobjektbeschriftungen
-% indention=EINZUG      - Einstellung des Einzugs der Beschriftung ab der zweiten Zeile
-% labelformat=NAME      - Einstellung der Zusammensetzung des Bezeichners (z. B. Label und Nummer) der Beschriftung
-% labelsep=NAME         - Einstellung des Trenners nach dem Bezeichner
-% justification=NAME    - Einstellung er Ausrichtung des Textes Beschriftung
-% singlelinecheck=BOOL  - Sonderbehandlung für einzeilige Beschriftungen ein- oder ausschalten
-% font=NAME             - Einstellung der Schrift der gesamten Beschriftung
-% labelfont=NAME        - Einstellung der Schrift des Bezeichners
-% textfont=NAME         - Einstellung der Schrift des Textes der Beschriftung
-% margin=BREITE         - Einstellung der Breite des Randes der Beschriftung
-% width=BREITE          - Einstellung der Breite der Beschriftung
-% parskip=ABSTAND       - Einstellung des Absatzabstandes der Beschriftung
-% hangindent=EINZUG     - Einstellung des Einzugs abgesehen von ersten Absatzzeilen
-% style=NAME            - Auswahl einer vordefinierten Gesamteinstellung
-% aboveskip=ABSTAND     - Einstellung des Abstandes vor einer Beschriftung
-% belowskip=ABSTAND     - Einstellung des Abstandes nach einer Beschriftung
-% position=WAHL         - Einstellung ob die Beschriftung als Über- oder Unterschrift formatiert werden soll
-% tableposition=WAHL    - Einstellung ob nur bei Tabellen die Beschriftung als Über- oder Unterschrift formatiert werden soll
-\captionsetup[figure]{position=bottom}
-\captionsetup[table]{position=bottom}
-
 % Paket:            booktabs
 % Beschreibung:     Das Hauptaugenmerk von booktabs liegt dabei auf der Gestaltung der horizontalen Linien innerhalb einer Tabelle.
 %                   Was unter anderem daran liegt, dass der Autor des Paketes Simon Fear mehrere Regeln bzw. Empfehlungen für die
@@ -113,6 +90,17 @@
 % Beschreibung:     Lädt das Paket courier für Schriftarten mit fester Breite.
 % Befehle:          \ttfamily     Aktiviert Courier füt Tabellen bzw. generelle begin-Blöcke
 \usepackage{courier}
+
+% Packet:           csquotes
+% Beschreibung:     Muss nach babel, polyglossia, biblatex und inputec geladen werden
+% Options:
+%   autostyle=true  - Diese Anweisung passt das Zitatdesign so an, dass es zur momentan im Dokument verwendeten Sprache passt
+%   autostyle=once  - Ändert das Zitatdesign einmalig, sodass es zur Grundsprache des Dokumentes passt.
+%   autostyle=try   - Verhalten sich, sollte multilinguale Unterstützung vorhanden sein, wie true und once, doch werden sie,
+%                     für den Fall, dass dies nicht möglich wäre, keine Warnungen erzeugen. (D. h. falls weder babel noch
+%                     polyglossia geladen wurden). Die Kurzformautostyleist äquivalent zu autostyle=true
+% Dokumentation:    http://mirrors.ibiblio.org/CTAN/info/translations/csquotes/de/csquotes-DE.pdf
+\usepackage[autostyle=true]{csquotes}
 
 % Paket:            enumitem
 % Beschreibung:     Zeilenabstände bei Aufzählungen definieren
@@ -168,10 +156,10 @@
 \usepackage{geometry}
 \geometry{
 %  a4paper,           % Papierformat (wird auch über die Dokumentenklasse definiert)
-  top=2.7cm,          % Abstand Kopfseite   (Zwischen Kopfseite und Inhalt)
+  top=2.5cm,          % Abstand Kopfseite   (Zwischen Kopfseite und Inhalt)
   bottom=2cm,         % Abstand Fußseite    (Zwischen Fußseite und Inhalt)
   left=2.5cm,         % Abstand Linkeseite  (Zwischen Linkerseite und Inhalt)
-  right=2cm,          % Abstand Rechteseite (Zwischen Recherseite und Inhalt)
+  right=2.5cm,        % Abstand Rechteseite (Zwischen Recherseite und Inhalt)
 %  width=              %                    textwidth (+marginsep +marinparwidth)
 %  textwidth=15cm,     % Textbreite
 %  marginparsep=1cm,   % Randnotiztrennng
@@ -306,6 +294,32 @@
 % Option:
 % \usepackage{showframe}
 
+% Paket:            subcaption
+% Beschreibung:     Bietet eine große Auswahl an Gestaltungsmöglichkeiten bezüglich der Beschriftung von Bildern und Tabellen
+%                   die neben oder unter untereinander dargestellt werden sollen.
+\usepackage{subcaption}
+
+% format=NAME           - Einstellung des grundsätzlichen Formats von Gleitobjektbeschriftungen
+% indention=EINZUG      - Einstellung des Einzugs der Beschriftung ab der zweiten Zeile
+% labelformat=NAME      - Einstellung der Zusammensetzung des Bezeichners (z. B. Label und Nummer) der Beschriftung
+% labelsep=NAME         - Einstellung des Trenners nach dem Bezeichner
+% justification=NAME    - Einstellung er Ausrichtung des Textes Beschriftung
+% singlelinecheck=BOOL  - Sonderbehandlung für einzeilige Beschriftungen ein- oder ausschalten
+% font=NAME             - Einstellung der Schrift der gesamten Beschriftung
+% labelfont=NAME        - Einstellung der Schrift des Bezeichners
+% textfont=NAME         - Einstellung der Schrift des Textes der Beschriftung
+% margin=BREITE         - Einstellung der Breite des Randes der Beschriftung
+% width=BREITE          - Einstellung der Breite der Beschriftung
+% parskip=ABSTAND       - Einstellung des Absatzabstandes der Beschriftung
+% hangindent=EINZUG     - Einstellung des Einzugs abgesehen von ersten Absatzzeilen
+% style=NAME            - Auswahl einer vordefinierten Gesamteinstellung
+% aboveskip=ABSTAND     - Einstellung des Abstandes vor einer Beschriftung
+% belowskip=ABSTAND     - Einstellung des Abstandes nach einer Beschriftung
+% position=WAHL         - Einstellung ob die Beschriftung als Über- oder Unterschrift formatiert werden soll
+% tableposition=WAHL    - Einstellung ob nur bei Tabellen die Beschriftung als Über- oder Unterschrift formatiert werden soll
+\captionsetup[figure]{position=bottom}
+\captionsetup[table]{position=bottom}
+
 % Packet:           tabularx
 % Beschreibung:     Werden Tabellen mit diesem Paket erstellt, ist es möglich Zeilenumbrüche in einer Zelle zu erzeugen
 \usepackage{tabularx}
@@ -343,11 +357,6 @@
 % \end{wrapfigure}
 \usepackage{wrapfig}
 
-% Packet:           csquotes
-% Beschreibung:     Muss nach babel, polyglossia, biblatex und inputec geladen werden
-% Option:
-\usepackage{csquotes}
-
 % Start des Dokuments
 \begin{document}
 
@@ -360,7 +369,7 @@
   \immediate\write18{./git-info.sh url > git-url.tmp}
 
   % Importiere weitere .tex Dokumente
-  \include{titel//titel}
+  \include{./title/title}
   \pagebreak
 
   % Pagestyle
@@ -394,7 +403,7 @@
   \fancyfoot[R]{Seite \thepage}
 
   % Importiere weitere .tex Dokumente
-  \include{examples//examples}
+  \include{./examples/examples}
 
   % Aufzählung aller Bilder
   % \listoffigures
@@ -409,5 +418,5 @@
   % \newpage
 
   % Literatur
-  % \printbibliography
+  % \printbibliography[heading=bibintoc]
 \end{document}
